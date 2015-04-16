@@ -24,7 +24,8 @@ bool Application::Run()
 	bool *endCondition = false;
 	Puzzle *puzzle = NULL;
 	int length = 0;
-	createGame(puzzle, length);
+	createGame(length);
+	puzzle = new Puzzle(length);
 	while (!endCondition)
 	{
 		update(endCondition);
@@ -35,7 +36,7 @@ bool Application::Run()
 	return false;
 }
 
-bool Application::createGame(Puzzle *puzzle, int& length)
+bool Application::createGame(int& length)
 {
 	char c[100];
 	int value;
@@ -48,7 +49,6 @@ bool Application::createGame(Puzzle *puzzle, int& length)
 
 		if (mathHelper.isSquared(value, length) && isNumberCorrect(value))
 		{
-			puzzle = new Puzzle(length);
 			return true;
 		}
 		else
