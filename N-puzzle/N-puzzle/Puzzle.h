@@ -4,12 +4,10 @@
 class Puzzle
 {
 private:
-	int puzzleSize, length;
-	PuzzlePiece *puzzlePieces;
+	int puzzleSize;
+	PuzzlePiece **puzzlePieces;
 public:
-	Puzzle(int size, int length);
+	Puzzle(int size);
 	~Puzzle();
-
-
 };
 

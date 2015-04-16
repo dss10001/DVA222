@@ -30,7 +30,7 @@ int main()
 		putchar(c);
 		if (isNumberCorrect(c) && isSquared(c, length))
 		{
-			puzzle = new Puzzle(c, length);
+			puzzle = new Puzzle(c);
 			printf("YES");
 		}
 		c = 0;
