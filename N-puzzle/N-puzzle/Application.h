@@ -3,6 +3,7 @@
 #include<conio.h>
 #include "Puzzle.h"
 #include "MathHelper.h"
+#include <stdlib.h>   
 
 class Application
 {

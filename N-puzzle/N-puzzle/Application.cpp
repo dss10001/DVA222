@@ -22,31 +22,33 @@ bool Application::Run()
 {
 	printf("");
 	bool *endCondition = false;
-	Puzzle *puzzle;
+	Puzzle *puzzle = NULL;
 	createGame(puzzle);
 	while (!endCondition)
 	{
 		update(endCondition);
 		draw();
 	}
+	delete puzzle, endCondition;
 	return false;
 }
 
 bool Application::createGame(Puzzle *puzzle)
 {
-	int c, length;
+	char c[3];
+	int value, length;
 	MathHelper mathHelper;
 	while (true)
 	{
-		printf("Enter a squared number (4,9,16,25)\n");
-		c = getchar();
-		putchar(c);
-		if (isNumberCorrect(c) && mathHelper.isSquared(c, length))
+		printf("Enter a squared number (9,16,25). Minimum value is:%u and maximum valus is:%u.\n",MINIMUMVALUE,MAXIMUMVALUE);
+		fgets(c, 3, stdin);
+		value = atoi(c);
+		if (mathHelper.isSquared(value, length) && isNumberCorrect(value))
 		{
-			puzzle = new Puzzle(c);
+			puzzle = new Puzzle(value);
 			printf("YES");
 		}
-		c = 0;
+		
 	}
 }
 
@@ -62,5 +64,5 @@ void Application::draw()
 
 bool Application::playAgain()
 {
-
+	return false;
 }
