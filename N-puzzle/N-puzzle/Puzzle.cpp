@@ -39,7 +39,7 @@ void Puzzle::MovePiece(direction moveDir)
 		}
 		break;
 	case South:
-		if (blancY < puzzleSize)
+		if (blancY < puzzleSize-1)
 		{
 			swapPieces(&puzzlePieces[blancX][blancY], &puzzlePieces[blancX][blancY + 1]);
 			blancY = blancY + 1;
@@ -53,7 +53,7 @@ void Puzzle::MovePiece(direction moveDir)
 		}
 		break;
 	case East:
-		if (blancX < puzzleSize)
+		if (blancX < puzzleSize-1)
 		{
 			swapPieces(&puzzlePieces[blancX][blancY], &puzzlePieces[blancX + 1][blancY]);
 			blancX = blancX + 1;
