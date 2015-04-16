@@ -11,14 +11,7 @@ Application::~Application()
 {
 }
 
-bool Application::isSquared(int number, int &length)
-{
-	if (number < 0)
-		return false;
-	int root(round(sqrt(number)));
-	length = root;
-	return number == root * root;
-}
+
 
 bool Application::isNumberCorrect(int number)
 {
@@ -31,13 +24,13 @@ bool Application::Run()
 
 	int c, length;
 	Puzzle *puzzle;
-
+	MathHelper mathHelper;
 	while (true)
 	{
 		printf("Enter a squared number (4,9,16,25)\n");
 		c = getchar();
 		putchar(c);
-		if (isNumberCorrect(c) && isSquared(c, length))
+		if (isNumberCorrect(c) && mathHelper.isSquared(c, length))
 		{
 			puzzle = new Puzzle(c);
 			printf("YES");
@@ -51,7 +44,7 @@ bool Application::Run()
 	return false;
 }
 
-void Application::Draw()
+void Application::draw()
 {
 	
 }

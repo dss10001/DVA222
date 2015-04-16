@@ -9,7 +9,7 @@ class Application
 private:
 	const int MINIMUMVALUE = 9, MAXIMUMVALUE = 100;
 
-	bool isSquared(int number, int &length);
+
 	bool isNumberCorrect(int number);
 	void draw();
 public:
