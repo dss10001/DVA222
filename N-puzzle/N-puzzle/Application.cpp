@@ -37,13 +37,13 @@ bool Application::Run()
 
 bool Application::createGame(Puzzle *puzzle, int& length)
 {
-	char c[3];
+	char c[100];
 	int value;
 	MathHelper mathHelper;
 	while (true)
 	{
 		printf("Enter a squared number (9,16,25). Minimum value is:%u and maximum valus is:%u.\n",MINIMUMVALUE,MAXIMUMVALUE);
-		fgets(c, 3, stdin);
+		fgets(c, 100, stdin);
 		value = atoi(c);
 
 		if (mathHelper.isSquared(value, length) && isNumberCorrect(value))
