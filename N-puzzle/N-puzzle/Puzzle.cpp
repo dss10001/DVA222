@@ -19,7 +19,7 @@ Puzzle::Puzzle(int size)
 
 Puzzle::~Puzzle()
 {
-	for (size_t i = 0; i < puzzleSize; i++)
+	for (int i = 0; i < puzzleSize; i++)
 	{
 		delete[] puzzlePieces[i];
 	}
@@ -33,19 +33,31 @@ void Puzzle::MovePiece(direction moveDir)
 	{
 	case North:
 		if (blancY > 0)
+		{
 			swapPieces(&puzzlePieces[blancX][blancY], &puzzlePieces[blancX][blancY - 1]);
+			blancY = blancY - 1;
+		}
 		break;
 	case South:
 		if (blancY < puzzleSize)
+		{
 			swapPieces(&puzzlePieces[blancX][blancY], &puzzlePieces[blancX][blancY + 1]);
+			blancY = blancY + 1;
+		}
 		break;
 	case West:
 		if (blancX > 0)
+		{
 			swapPieces(&puzzlePieces[blancX][blancY], &puzzlePieces[blancX - 1][blancY]);
+			blancX = blancX - 1;
+		}
 		break;
 	case East:
 		if (blancX < puzzleSize)
+		{
 			swapPieces(&puzzlePieces[blancX][blancY], &puzzlePieces[blancX + 1][blancY]);
+			blancX = blancX + 1;
+		}
 		break;
 	}
 }
@@ -53,7 +65,7 @@ void Puzzle::MovePiece(direction moveDir)
 // private functions. 
 void Puzzle::InitializePuzzle()
 {
-	int piece_number = 0;
+	int piece_number = 1;
 	for (int i = 0; i < puzzleSize; i++)
 	{
 		for (int j = 0; j < puzzleSize; j++)
@@ -62,6 +74,8 @@ void Puzzle::InitializePuzzle()
 			piece_number++;
 		}
 	}
+	blancX = blancY = puzzleSize - 1;
+	puzzlePieces[puzzleSize - 1][puzzleSize - 1].SetNumber(0);
 }
 void Puzzle::ShufflePuzzle()
 {
@@ -77,14 +91,17 @@ void Puzzle::ShufflePuzzle()
 }
 bool Puzzle::CheckIfCorrect()
 {
-	int correct_number = 0;
+	int correct_number = 1;
 	for (int i = 0; i < puzzleSize; i++)
 	{
 		for (int j = 0; j < puzzleSize; j++)
 		{
 			if (puzzlePieces[i][j].GetNumber() != correct_number)
 			{
-				return 0;
+				if (i != puzzleSize - 1 && j != puzzleSize - 1)
+				{
+					return 0;
+				}
 			}
 		}
 	}
