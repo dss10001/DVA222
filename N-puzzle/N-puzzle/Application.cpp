@@ -22,7 +22,7 @@ bool Application::Run()
 {
 	printf("");
 	bool *endCondition = false;
-	int length = 0;
+	int length = 0;}
 	createGame(length);
 	Puzzle *puzzle = new Puzzle(length);
 	while (!endCondition)
@@ -78,11 +78,17 @@ void Application::draw(int &length, Puzzle *puzzle)
 
 bool Application::playAgain()
 {
-	printf("Want to play again? Press Y/N.\n");
 	char input;
-	while (input = std::cin.get() == 'N' || 'Y')
+	do
 	{
-		printf("Want to play again? Press Y/N.\n");
-	}
-	return false;
+		std::cout << "Want to play again? Press Y/N.\n" << std::endl;
+		std::cin >> input;
+		input = tolower(input);
+		std::cin.clear();
+	} while (!std::cin.fail() && input != 'y' && input != 'n');
+	if (input == 'y')
+		return true;
+	else
+		return false;
+
 }
