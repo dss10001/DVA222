@@ -18,7 +18,7 @@ private:
 
 public:
 	void ResetPuzzle();
-	PuzzlePiece** GetPuzzlePieces() { return puzzlePieces; };
+	int GetPuzzlePieceValue(int index_x, int index_y) { return puzzlePieces[index_x][index_y].GetNumber(); };
 	void MovePiece(direction moveDir);
 	Puzzle(int size);
 	~Puzzle();

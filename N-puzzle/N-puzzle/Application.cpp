@@ -67,12 +67,11 @@ void Application::update(bool *condition)
 void Application::draw(int &length, Puzzle puzzle)
 {
 	system("cls");
-	PuzzlePiece** puzzlePieces = puzzle.GetPuzzlePieces();
 	for (int y = 0; y < length; y++)
 	{
 		for (int x = 0; x < length; x++)
 		{
-			printf("%03d ", puzzlePieces[y][x]);
+			printf("%03d ", puzzle.GetPuzzlePieceValue(y, x));
 		}
 		printf("\n");
 	}
