@@ -69,13 +69,13 @@ void Puzzle::ResetPuzzle()
 bool Puzzle::CheckIfCorrect()
 {
 	int correct_number = 1;
-	for (int i = 0; i < puzzleSize; i++)
+	for (int y = 0; y < puzzleSize; y++)
 	{
-		for (int j = 0; j < puzzleSize; j++)
+		for (int x = 0; x < puzzleSize; x++)
 		{
-			if (puzzlePieces[i][j].GetNumber() != correct_number)
+			if (puzzlePieces[x][y].GetNumber() != correct_number)
 			{
-				if (i != puzzleSize - 1 && j != puzzleSize - 1)
+				if (x != puzzleSize - 1 && y != puzzleSize - 1)
 				{
 					return 0;
 				}

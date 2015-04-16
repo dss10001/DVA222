@@ -81,6 +81,7 @@ void Application::update(bool *condition, Puzzle* puzzle)
 	if (puzzle->CheckIfCorrect())
 	{
 		// do something
+		int tmp = 0;
 	}
 }
 
