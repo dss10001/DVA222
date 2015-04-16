@@ -22,7 +22,7 @@ bool Application::Run()
 {
 	printf("");
 	bool *endCondition = false;
-	int length = 0;}
+	int length = 0;
 	createGame(length);
 	Puzzle *puzzle = new Puzzle(length);
 	while (!endCondition)
@@ -78,6 +78,7 @@ void Application::draw(int &length, Puzzle *puzzle)
 
 bool Application::playAgain()
 {
+	std::string tempString;
 	char input;
 	do
 	{
