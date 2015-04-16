@@ -21,9 +21,20 @@ bool Application::isNumberCorrect(int number)
 bool Application::Run()
 {
 	printf("");
-
-	int c, length;
+	bool *endCondition = false;
 	Puzzle *puzzle;
+	createGame(puzzle);
+	while (!endCondition)
+	{
+		update(endCondition);
+		draw();
+	}
+	return false;
+}
+
+bool Application::createGame(Puzzle *puzzle)
+{
+	int c, length;
 	MathHelper mathHelper;
 	while (true)
 	{
@@ -37,14 +48,19 @@ bool Application::Run()
 		}
 		c = 0;
 	}
-	while (true)
-	{
+}
 
-	}
-	return false;
+void Application::update(bool *condition)
+{
+
 }
 
 void Application::draw()
 {
 	
+}
+
+bool Application::playAgain()
+{
+
 }

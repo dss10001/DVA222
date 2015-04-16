@@ -11,7 +11,12 @@ private:
 
 
 	bool isNumberCorrect(int number);
+	bool playAgain();
+
+	void update(bool *condition);
 	void draw();
+
+	bool createGame(Puzzle *puzzle);
 public:
 	Application();
 	~Application();
