@@ -21,7 +21,7 @@ bool Application::isNumberCorrect(int number)
 bool Application::Run()
 {
 	printf("");
-	bool *endCondition = false;
+	bool endCondition = false;
 	int length = 0;
 	createGame(length);
 	Puzzle *puzzle = new Puzzle(length);
@@ -29,6 +29,17 @@ bool Application::Run()
 	{		
 		draw(length, puzzle);
 		update(endCondition, puzzle);
+		if (puzzle->CheckIfCorrect())
+		{
+			if (playAgain())
+			{
+				puzzle->ResetPuzzle();
+			}
+			else
+			{
+				endCondition = true;
+			}
+		}
 	}
 
 	delete puzzle, endCondition;
@@ -58,7 +69,7 @@ bool Application::createGame(int& length)
 	}
 }
 
-void Application::update(bool *condition, Puzzle* puzzle)
+void Application::update(bool condition, Puzzle* puzzle)
 {
 	char input = _getch();
 	switch (input)
@@ -77,11 +88,6 @@ void Application::update(bool *condition, Puzzle* puzzle)
 	case 100:
 		puzzle->MovePiece((direction)3);
 		break;
-	}
-	if (puzzle->CheckIfCorrect())
-	{
-		// do something
-		int tmp = 0;
 	}
 }
 
