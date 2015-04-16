@@ -79,5 +79,11 @@ void Application::draw(int &length, Puzzle puzzle)
 
 bool Application::playAgain()
 {
+	printf("Want to play again? Press Y/N.\n");
+	char input;
+	while (input = std::cin.get() == 'N' || 'Y')
+	{
+		printf("Want to play again? Press Y/N.\n");
+	}
 	return false;
 }
