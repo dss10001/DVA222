@@ -14,7 +14,7 @@ Puzzle::Puzzle(int size)
 	}
 
 	InitializePuzzle();
-	ShufflePuzzle();
+	//ShufflePuzzle();
 }
 
 Puzzle::~Puzzle()
@@ -75,11 +75,16 @@ bool Puzzle::CheckIfCorrect()
 		{
 			if (puzzlePieces[x][y].GetNumber() != correct_number)
 			{
-				if (x != puzzleSize - 1 && y != puzzleSize - 1)
+				if ((x == puzzleSize - 1 && y == puzzleSize - 1) && puzzlePieces[x][y].GetNumber() == 0)
+				{
+					// do nothing
+				}
+				else
 				{
 					return 0;
 				}
 			}
+			correct_number++;
 		}
 	}
 	return 1;
@@ -89,11 +94,11 @@ bool Puzzle::CheckIfCorrect()
 void Puzzle::InitializePuzzle()
 {
 	int piece_number = 1;
-	for (int i = 0; i < puzzleSize; i++)
+	for (int y = 0; y < puzzleSize; y++)
 	{
-		for (int j = 0; j < puzzleSize; j++)
+		for (int x = 0; x < puzzleSize; x++)
 		{
-			puzzlePieces[i][j].SetNumber(piece_number);
+			puzzlePieces[x][y].SetNumber(piece_number);
 			piece_number++;
 		}
 	}
