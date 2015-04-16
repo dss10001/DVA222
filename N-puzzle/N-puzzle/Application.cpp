@@ -30,6 +30,7 @@ bool Application::Run()
 		update(endCondition);
 		draw(length, *puzzle);
 	}
+
 	delete puzzle, endCondition;
 	return false;
 }
@@ -44,12 +45,17 @@ bool Application::createGame(Puzzle *puzzle, int& length)
 		printf("Enter a squared number (9,16,25). Minimum value is:%u and maximum valus is:%u.\n",MINIMUMVALUE,MAXIMUMVALUE);
 		fgets(c, 3, stdin);
 		value = atoi(c);
+
 		if (mathHelper.isSquared(value, length) && isNumberCorrect(value))
 		{
 			puzzle = new Puzzle(length);
-			printf("YES");
+			return true;
 		}
-		
+		else
+		{
+			printf("Value is not correct, please try again. ");
+		}
+		std::cin.clear();
 	}
 }
 
