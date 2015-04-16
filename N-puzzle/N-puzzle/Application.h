@@ -1,9 +1,11 @@
 #pragma once
-#include<iostream>
-#include<conio.h>
+#include <iostream>
+#include <conio.h>
 #include "Puzzle.h"
 #include "MathHelper.h"
-#include <stdlib.h>   
+#include <stdlib.h>  
+#include <string>
+#include <algorithm>
 
 class Application
 {

@@ -100,13 +100,14 @@ void Application::draw(int &length, Puzzle *puzzle)
 bool Application::playAgain()
 {
 	std::string tempString;
-	char input;
+	char input = 0;
 	do
 	{
-		std::cout << "Want to play again? Press Y/N.\n" << std::endl;
-		std::cin >> input;
-		input = tolower(input);
-		std::cin.clear();
+		std::cout << "Want to play again? Press Y/N." << std::endl;
+		std::getline(std::cin, tempString);
+		std::transform(tempString.begin(), tempString.end(), tempString.begin(), ::tolower);
+		if (tempString.length() == 1)
+			input = tempString[0];
 	} while (!std::cin.fail() && input != 'y' && input != 'n');
 	if (input == 'y')
 		return true;
