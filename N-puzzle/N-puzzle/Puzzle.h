@@ -17,6 +17,8 @@ private:
 	void swapPieces(PuzzlePiece *a, PuzzlePiece *b);
 
 public:
+	void ResetPuzzle();
+	PuzzlePiece** GetPuzzlePieces() { return puzzlePieces; };
 	void MovePiece(direction moveDir);
 	Puzzle(int size);
 	~Puzzle();

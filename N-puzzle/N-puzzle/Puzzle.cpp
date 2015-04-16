@@ -61,6 +61,11 @@ void Puzzle::MovePiece(direction moveDir)
 		break;
 	}
 }
+void Puzzle::ResetPuzzle()
+{
+	InitializePuzzle();
+	ShufflePuzzle();
+}
 
 // private functions. 
 void Puzzle::InitializePuzzle()
