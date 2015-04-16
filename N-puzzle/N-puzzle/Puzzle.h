@@ -8,12 +8,16 @@ class Puzzle
 private:
 	int puzzleSize;
 	PuzzlePiece **puzzlePieces;
+	int blancX;
+	int blancY;
 
-	void swapPieces(PuzzlePiece a, PuzzlePiece b);
+	void InitializePuzzle();
+	void ShufflePuzzle();
+	bool CheckIfCorrect();
+	void swapPieces(PuzzlePiece *a, PuzzlePiece *b);
 
 public:
 	void MovePiece(direction moveDir);
-
 	Puzzle(int size);
 	~Puzzle();
 };
