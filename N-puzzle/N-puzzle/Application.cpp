@@ -23,20 +23,21 @@ bool Application::Run()
 	printf("");
 	bool *endCondition = false;
 	Puzzle *puzzle = NULL;
-	createGame(puzzle);
+	int length = 0;
+	createGame(puzzle, length);
 	while (!endCondition)
 	{
 		update(endCondition);
-		draw();
+		draw(length);
 	}
 	delete puzzle, endCondition;
 	return false;
 }
 
-bool Application::createGame(Puzzle *puzzle)
+bool Application::createGame(Puzzle *puzzle, int& length)
 {
 	char c[3];
-	int value, length;
+	int value;
 	MathHelper mathHelper;
 	while (true)
 	{
@@ -57,9 +58,16 @@ void Application::update(bool *condition)
 
 }
 
-void Application::draw()
+void Application::draw(int &length)
 {
-	
+	system("cls");
+	for (int y = 0; y < length; y++)
+	{
+		for (int x = 0; x < length; x++)
+		{
+
+		}
+	}
 }
 
 bool Application::playAgain()
