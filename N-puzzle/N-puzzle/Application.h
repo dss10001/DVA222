@@ -1,8 +1,17 @@
 #pragma once
+#include<iostream>
+#include<conio.h>
+#include "Puzzle.h"
+#include "MathHelper.h"
+
 class Application
 {
 private:
-	void Draw();
+	const int MINIMUMVALUE = 9, MAXIMUMVALUE = 100;
+
+	bool isSquared(int number, int &length);
+	bool isNumberCorrect(int number);
+	void draw();
 public:
 	Application();
 	~Application();
