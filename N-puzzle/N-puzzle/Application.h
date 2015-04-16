@@ -14,7 +14,7 @@ private:
 	bool isNumberCorrect(int number);
 	bool playAgain();
 
-	void update(bool *condition);
+	void update(bool *condition, Puzzle *puzzle);
 	void draw(int &length, Puzzle *puzzle);
 
 	bool createGame(int& length);

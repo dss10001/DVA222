@@ -26,9 +26,9 @@ bool Application::Run()
 	createGame(length);
 	Puzzle *puzzle = new Puzzle(length);
 	while (!endCondition)
-	{
-		update(endCondition);
+	{		
 		draw(length, puzzle);
+		update(endCondition, puzzle);
 	}
 
 	delete puzzle, endCondition;
@@ -58,9 +58,30 @@ bool Application::createGame(int& length)
 	}
 }
 
-void Application::update(bool *condition)
+void Application::update(bool *condition, Puzzle* puzzle)
 {
-
+	char input = _getch();
+	switch (input)
+	{
+	case 119:
+		// north
+		puzzle->MovePiece((direction)0);
+		break;
+	case 115:
+		//south
+		puzzle->MovePiece((direction)1);
+		break;
+	case 97:
+		puzzle->MovePiece((direction)2);
+		break;
+	case 100:
+		puzzle->MovePiece((direction)3);
+		break;
+	}
+	if (puzzle->CheckIfCorrect())
+	{
+		// do something
+	}
 }
 
 void Application::draw(int &length, Puzzle *puzzle)
@@ -70,7 +91,7 @@ void Application::draw(int &length, Puzzle *puzzle)
 	{
 		for (int x = 0; x < length; x++)
 		{
-			printf("%02d ", puzzle->GetPuzzlePieceValue(y, x));
+			printf("%02d ", puzzle->GetPuzzlePieceValue(x, y));
 		}
 		printf("\n");
 	}

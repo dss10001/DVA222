@@ -66,6 +66,24 @@ void Puzzle::ResetPuzzle()
 	InitializePuzzle();
 	ShufflePuzzle();
 }
+bool Puzzle::CheckIfCorrect()
+{
+	int correct_number = 1;
+	for (int i = 0; i < puzzleSize; i++)
+	{
+		for (int j = 0; j < puzzleSize; j++)
+		{
+			if (puzzlePieces[i][j].GetNumber() != correct_number)
+			{
+				if (i != puzzleSize - 1 && j != puzzleSize - 1)
+				{
+					return 0;
+				}
+			}
+		}
+	}
+	return 1;
+}
 
 // private functions. 
 void Puzzle::InitializePuzzle()
@@ -93,24 +111,6 @@ void Puzzle::ShufflePuzzle()
 		dir = rand() % 4;
 		MovePiece((direction)dir);
 	}
-}
-bool Puzzle::CheckIfCorrect()
-{
-	int correct_number = 1;
-	for (int i = 0; i < puzzleSize; i++)
-	{
-		for (int j = 0; j < puzzleSize; j++)
-		{
-			if (puzzlePieces[i][j].GetNumber() != correct_number)
-			{
-				if (i != puzzleSize - 1 && j != puzzleSize - 1)
-				{
-					return 0;
-				}
-			}
-		}
-	}
-	return 1;
 }
 void Puzzle::swapPieces(PuzzlePiece *a, PuzzlePiece *b)
 {
