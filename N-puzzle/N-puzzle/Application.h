@@ -15,7 +15,7 @@ private:
 	bool playAgain();
 
 	void update(bool *condition);
-	void draw(int &length, Puzzle puzzle);
+	void draw(int &length, Puzzle *puzzle);
 
 	bool createGame(int& length);
 public:

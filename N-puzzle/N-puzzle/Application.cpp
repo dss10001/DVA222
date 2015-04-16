@@ -22,14 +22,13 @@ bool Application::Run()
 {
 	printf("");
 	bool *endCondition = false;
-	Puzzle *puzzle = NULL;
 	int length = 0;
 	createGame(length);
-	puzzle = new Puzzle(length);
+	Puzzle *puzzle = new Puzzle(length);
 	while (!endCondition)
 	{
 		update(endCondition);
-		draw(length, *puzzle);
+		draw(length, puzzle);
 	}
 
 	delete puzzle, endCondition;
@@ -64,14 +63,14 @@ void Application::update(bool *condition)
 
 }
 
-void Application::draw(int &length, Puzzle puzzle)
+void Application::draw(int &length, Puzzle *puzzle)
 {
 	system("cls");
 	for (int y = 0; y < length; y++)
 	{
 		for (int x = 0; x < length; x++)
 		{
-			printf("%03d ", puzzle.GetPuzzlePieceValue(y, x));
+			printf("%02d ", puzzle->GetPuzzlePieceValue(y, x));
 		}
 		printf("\n");
 	}
