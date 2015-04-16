@@ -78,12 +78,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="Puzzle.cpp" />
     <ClCompile Include="PuzzlePiece.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
     <ClInclude Include="MathHelper.h" />
     <ClInclude Include="Puzzle.h" />
     <ClInclude Include="PuzzlePiece.h" />
