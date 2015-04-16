@@ -46,7 +46,7 @@ bool Application::createGame(Puzzle *puzzle, int& length)
 		value = atoi(c);
 		if (mathHelper.isSquared(value, length) && isNumberCorrect(value))
 		{
-			puzzle = new Puzzle(value);
+			puzzle = new Puzzle(length);
 			printf("YES");
 		}
 		
