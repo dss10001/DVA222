@@ -20,7 +20,6 @@ bool Application::isNumberCorrect(int number)
 
 bool Application::Run()
 {
-	printf("");
 	bool endCondition = false;
 	int length = 0;
 	createGame(length);
@@ -32,13 +31,9 @@ bool Application::Run()
 		if (puzzle->CheckIfCorrect())
 		{
 			if (playAgain())
-			{
 				puzzle->ResetPuzzle();
-			}
 			else
-			{
 				endCondition = true;
-			}
 		}
 	}
 
@@ -58,13 +53,9 @@ bool Application::createGame(int& length)
 		value = atoi(c);
 
 		if (mathHelper.isSquared(value, length) && isNumberCorrect(value))
-		{
 			return true;
-		}
 		else
-		{
 			printf("Value is not correct, please try again. ");
-		}
 		std::cin.clear();
 	}
 }
@@ -120,5 +111,4 @@ bool Application::playAgain()
 		return true;
 	else
 		return false;
-
 }
