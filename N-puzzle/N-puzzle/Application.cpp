@@ -12,7 +12,6 @@ Application::~Application()
 }
 
 
-
 bool Application::isNumberCorrect(int number)
 {
 	return (number >= MINIMUMVALUE && number <= MAXIMUMVALUE);

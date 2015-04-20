@@ -110,16 +110,14 @@ void Puzzle::InitializePuzzle()
 void Puzzle::ShufflePuzzle()
 {
 	// random amount of moves. 
-	int randomValue = rand() % (100 + 50) * (puzzleSize * puzzleSize);
+	int randomValue = rand() % (10 + 10) * (puzzleSize * puzzleSize);
 	int dir = 0;
 	for (int i = 0; i < randomValue; i++)
 	{
 		// get random direction.
 		dir = rand() % 4;
 		MovePiece((direction)dir);
-
 		Draw();
-		//Sleep(50);
 	}
 }
 void Puzzle::swapPieces(PuzzlePiece *a, PuzzlePiece *b)
