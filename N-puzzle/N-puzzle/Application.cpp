@@ -24,10 +24,12 @@ bool Application::Run()
 	int length = 0;
 	createGame(length);
 	Puzzle *puzzle = new Puzzle(length);
+
 	while (!endCondition)
 	{		
-		draw(length, puzzle);
 		update(endCondition, puzzle);
+		draw(length, puzzle);
+		
 		if (puzzle->CheckIfCorrect())
 		{
 			if (playAgain())
@@ -84,15 +86,7 @@ void Application::update(bool condition, Puzzle* puzzle)
 
 void Application::draw(int &length, Puzzle *puzzle)
 {
-	system("cls");
-	for (int y = 0; y < length; y++)
-	{
-		for (int x = 0; x < length; x++)
-		{
-			printf("%02d ", puzzle->GetPuzzlePieceValue(x, y));
-		}
-		printf("\n");
-	}
+	puzzle->Draw();
 }
 
 bool Application::playAgain()

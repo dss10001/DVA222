@@ -1,6 +1,7 @@
 #include "Puzzle.h"
 #include <stdlib.h>
 #include <time.h>
+#include <Windows.h>
 
 Puzzle::Puzzle(int size)
 {
@@ -15,6 +16,7 @@ Puzzle::Puzzle(int size)
 
 	InitializePuzzle();
 	//ShufflePuzzle();
+	Draw();
 }
 
 Puzzle::~Puzzle()
@@ -108,13 +110,16 @@ void Puzzle::InitializePuzzle()
 void Puzzle::ShufflePuzzle()
 {
 	// random amount of moves. 
-	int randomValue = rand() % 100 + 50;
+	int randomValue = rand() % (100 + 50) * (puzzleSize * puzzleSize);
 	int dir = 0;
 	for (int i = 0; i < randomValue; i++)
 	{
 		// get random direction.
 		dir = rand() % 4;
 		MovePiece((direction)dir);
+
+		Draw();
+		//Sleep(50);
 	}
 }
 void Puzzle::swapPieces(PuzzlePiece *a, PuzzlePiece *b)
@@ -122,4 +127,23 @@ void Puzzle::swapPieces(PuzzlePiece *a, PuzzlePiece *b)
 	PuzzlePiece tmp = *b;
 	*b = *a;
 	*a = tmp;
+}
+void Puzzle::Draw()
+{
+	system("cls");
+	for (int y = 0; y < puzzleSize; y++)
+	{
+		for (int x = 0; x < puzzleSize; x++)
+		{
+			if (puzzlePieces[x][y].GetNumber() != 0)
+			{
+				printf("%02d ", puzzlePieces[x][y].GetNumber());
+			}
+			else
+			{
+				printf("   ");
+			}
+		} 
+		printf("\n");
+	}
 }
