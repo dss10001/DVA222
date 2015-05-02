@@ -8,12 +8,13 @@
 #include "Graphix.h"
 
 #include "Ball.h"
+#include "Line.h"
 
-
+int linesCount = 4;
 int ballCount = 10;
 
 Ball **balls = new Ball*[ballCount];
-
+Line **lines = new Line*[linesCount];
 
 		 
 int _tmain(int argc, char** argv)
