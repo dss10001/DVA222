@@ -5,6 +5,7 @@
 class Line : public Shape
 {
 protected:
+	int red, green, blue;
 	Point secondPosition;
 public:
 	Line();

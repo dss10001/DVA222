@@ -20,6 +20,7 @@ Line::~Line()
 
 void Line::Draw()
 {
+	SetColor(red, green, blue);
 	DrawLine(position.X, position.Y, secondPosition.X, secondPosition.Y);
 }
 
