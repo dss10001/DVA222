@@ -3,8 +3,16 @@
 
 Line::Line()
 {
+	position = Point(0, 0);
+	secondPosition = Point(0, 0);
 }
 
+
+Line::Line(Point p1, Point p2)
+{
+	position = p1;
+	secondPosition = p2;
+}
 
 Line::~Line()
 {

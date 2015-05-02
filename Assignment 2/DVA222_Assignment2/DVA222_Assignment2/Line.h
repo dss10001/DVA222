@@ -9,6 +9,7 @@ protected:
 public:
 	Line();
 	~Line();
+	Line(Point p1, Point p2);
 
 	Vector GetOutDirection(Vector *incomingDirection);
 
