@@ -9,7 +9,7 @@ VerticalLine::VerticalLine()
 }
 
 
-VerticalLine::VerticalLine(Point p1, Point p2)
+VerticalLine::VerticalLine(Point p1, double length) : Line(p1, Point(p1.X, p1.Y + length))
 {
 	red = 255;
 	green = 255;

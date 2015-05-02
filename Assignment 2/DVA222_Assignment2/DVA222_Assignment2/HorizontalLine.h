@@ -5,7 +5,7 @@ class HorizontalLine : public Line
 
 public:
 	HorizontalLine();
-	HorizontalLine(Point p1, Point p2);
+	HorizontalLine(Point p1, double length);
 	~HorizontalLine();
 };
 

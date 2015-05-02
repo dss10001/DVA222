@@ -31,10 +31,10 @@ int _tmain(int argc, char** argv)
 		balls[i] = new Ball(400, 300, 10);
 		balls[i]->SetSpeed(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
 	}
-	lines[0] = new VerticalLine(Point(0,0), Point(0,0));
-	lines[1] = new VerticalLine(Point(0, 0), Point(0, 0));
-	lines[2] = new HorizontalLine(Point(0, 0), Point(0, 0));
-	lines[3] = new HorizontalLine(Point(0, 0), Point(0, 0));
+	lines[0] = new VerticalLine(Point(50,50), 200);
+	lines[1] = new VerticalLine(Point(0, 0), 200);
+	lines[2] = new HorizontalLine(Point(0, 0), 200);
+	lines[3] = new HorizontalLine(Point(0, 0), 200);
 	
 	//NOTE:
 	//----------------------------------------------------------------------
@@ -61,6 +61,11 @@ void Draw()
 	{
 		balls[i]->Update();
 		balls[i]->Draw();
+	}
+	for (int i = 0; i < linesCount; i++)
+	{
+		lines[i]->Update();
+		lines[i]->Draw();
 	}
 
 	Redraw();

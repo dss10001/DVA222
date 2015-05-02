@@ -4,7 +4,7 @@ class VerticalLine : public Line
 {
 public:
 	VerticalLine();
-	VerticalLine(Point p1, Point p2);
+	VerticalLine(Point p1, double length);
 	~VerticalLine();
 };
 
