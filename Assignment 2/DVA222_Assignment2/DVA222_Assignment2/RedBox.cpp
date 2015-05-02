@@ -4,8 +4,8 @@
 RedBox::RedBox(Point position, int width, int height)
 :Rectangle(position, width, height)
 {
-	Red = 0; 
-	Green = 255;
+	Red = 255; 
+	Green = 0;
 	Blue = 0;
 }
 RedBox::RedBox()

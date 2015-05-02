@@ -1,6 +1,6 @@
 #pragma once
 #include "Rectangle.h"
-class BlueBox : Rectangle
+class BlueBox : public Rectangle
 {
 public:
 	BlueBox(Point position, int width, int height);

@@ -10,12 +10,17 @@
 #include "Ball.h"
 #include "HorizontalLine.h"
 #include "VerticalLine.h"
+#include "Rectangle.h"
+#include "RedBox.h"
+#include "BlueBox.h"
 
 int linesCount = 6;
-int ballCount = 10;
+int ballCount = 1;
+int rectangleCount = 4;
 
 Ball **balls = new Ball*[ballCount];
 Line **lines = new Line*[linesCount];
+Rectangle **boxes = new Rectangle*[rectangleCount];
 
 		 
 int _tmain(int argc, char** argv)
@@ -37,6 +42,11 @@ int _tmain(int argc, char** argv)
 	lines[3] = new VerticalLine(Point(750, 150), 400);
 	lines[4] = new HorizontalLine(Point(50, 25), 700);
 	lines[5] = new HorizontalLine(Point(50, 590), 700);
+
+	boxes[0] = new BlueBox(Point(100, 400), 80, 50);
+	boxes[1] = new BlueBox(Point(500, 100), 80, 50);
+	boxes[2] = new RedBox(Point(100, 100), 80, 50);
+	boxes[3] = new RedBox(Point(500, 500), 80, 50);
 	
 	//NOTE:
 	//----------------------------------------------------------------------
@@ -49,6 +59,21 @@ int _tmain(int argc, char** argv)
 }
 
 
+void CollissionCheck()
+{
+	for (int i = 0; i < ballCount; i++)
+	{
+		for (int r = 0; r < rectangleCount; r++)
+		{
+			boxes[r]->CircleCollision(balls[i]);
+		}
+		for (int l = 0; l < linesCount; l++)
+		{
+
+		}
+	}
+}
+
 //NOTE:
 //------------------------------------------------------------------------------
 //This is the function which is called by the graphix library to draw the objects
@@ -57,6 +82,8 @@ int _tmain(int argc, char** argv)
 ////------------------------------------------------------------------------------
 void Draw()
 {
+	CollissionCheck();
+
 	SetColor(255, 255, 255);
 
 	for (int i = 0; i < ballCount; i++)
@@ -68,6 +95,10 @@ void Draw()
 	{
 		lines[i]->Update();
 		lines[i]->Draw();
+	}
+	for (int i = 0; i < rectangleCount; i++)
+	{
+		boxes[i]->Draw();
 	}
 
 	Redraw();

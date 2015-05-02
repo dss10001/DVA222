@@ -7,7 +7,7 @@ class Rectangle: Shape
 public:
 	int width, height;
 	
-	void CircleCollision(Ball* circle, Point p, int r);	
+	void CircleCollision(Ball* circle);	
 	virtual void Draw();
 
 	Rectangle(Point position, int width, int height);
