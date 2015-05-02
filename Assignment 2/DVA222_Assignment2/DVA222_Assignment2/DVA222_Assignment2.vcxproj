@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Graphix.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Structs.h" />
@@ -91,6 +92,7 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="DVA222_Assignment2.cpp" />
     <ClCompile Include="Graphix.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
