@@ -30,7 +30,7 @@ int _tmain(int argc, char** argv)
 		balls[i] = new Ball(400, 300, 10);
 		balls[i]->SetSpeed(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
 	}
-
+	lines[0] = new Line(Point p1, Point p2);
 	
 	//NOTE:
 	//----------------------------------------------------------------------
