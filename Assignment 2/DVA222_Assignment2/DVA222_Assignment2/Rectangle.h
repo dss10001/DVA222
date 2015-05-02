@@ -12,6 +12,7 @@ public:
 	virtual void Draw();
 
 	Rectangle(int width, int height);
+	Rectangle();
 	~Rectangle();
 
 protected:

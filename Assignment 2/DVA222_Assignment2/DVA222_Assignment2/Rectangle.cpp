@@ -1,6 +1,14 @@
 #include "Rectangle.h"
 
 
+Rectangle::Rectangle()
+{
+	this->width = 0;
+	this->height = 0;
+	Red = 0;
+	Green = 0;
+	Blue = 0;
+}
 Rectangle::Rectangle(int width, int height)
 {
 	this->width = width;
