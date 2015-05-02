@@ -8,7 +8,8 @@
 #include "Graphix.h"
 
 #include "Ball.h"
-#include "Line.h"
+#include "HorizontalLine.h"
+#include "VerticalLine.h"
 
 int linesCount = 4;
 int ballCount = 10;
@@ -30,7 +31,10 @@ int _tmain(int argc, char** argv)
 		balls[i] = new Ball(400, 300, 10);
 		balls[i]->SetSpeed(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
 	}
-	lines[0] = new Line(Point p1, Point p2);
+	lines[0] = new VerticalLine(Point(0,0), Point(0,0));
+	lines[1] = new VerticalLine(Point(0, 0), Point(0, 0));
+	lines[2] = new HorizontalLine(Point(0, 0), Point(0, 0));
+	lines[3] = new HorizontalLine(Point(0, 0), Point(0, 0));
 	
 	//NOTE:
 	//----------------------------------------------------------------------
