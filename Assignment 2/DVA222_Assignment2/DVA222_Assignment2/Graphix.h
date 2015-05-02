@@ -20,8 +20,8 @@ static bool invalidate = true;
 
 void InitGraphix(int argc, char** argv);
 void DrawLine(int x1, int y1, int x2, int y2 );
-void DrawRectanle(int x, int y, int width, int height );
-void FillRectanle(int x, int y, int width, int height );
+void DrawRectangle(int x, int y, int width, int height );
+void FillRectangle(int x, int y, int width, int height );
 
 void DrawCircle(int cx, int cy, int radius);
 

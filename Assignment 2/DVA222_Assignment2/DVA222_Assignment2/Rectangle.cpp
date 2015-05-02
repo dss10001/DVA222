@@ -42,5 +42,5 @@ void Rectangle::CircleCollision(Ball* circle, Point p, int r)
 void Rectangle::Draw()
 {
 	SetColor(Red, Green, Blue);
-	DrawRectanle(position.X, position.Y, width, height);
+	DrawRectangle(position.X, position.Y, width, height);
 }
