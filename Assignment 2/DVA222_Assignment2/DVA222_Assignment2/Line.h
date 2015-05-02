@@ -10,7 +10,7 @@ public:
 	Line();
 	~Line();
 
-
+	Vector GetOutDirection(Vector *incomingDirection);
 
 	Point GetPosition();
 
