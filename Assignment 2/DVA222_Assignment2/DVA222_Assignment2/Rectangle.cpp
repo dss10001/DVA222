@@ -1,18 +1,33 @@
 #include "Rectangle.h"
 
 
-Rectangle::Rectangle()
+Rectangle::Rectangle(int width, int height)
 {
+	this->width = width;
+	this->height = height;
+	Red = 0;
+	Green = 0;
+	Blue = 0;
 }
-
 
 Rectangle::~Rectangle()
 {
 }
 
-void Rectangle::CircleCollision(Point p, int r)
+
+void Rectangle::CircleCollision(Ball* circle, Point p, int r)
 {
-	int r_right, r_left, r_top, r_bottom;
-	//r_right = 
-	
+	double r_right, r_left, r_top, r_bottom;
+	r_right = position.X + (width / 2);
+	r_left = position.X - (width / 2);
+	r_top = position.Y - (height / 2);
+	r_bottom = position.Y + (height / 2);
+
+	if (circle->GetPosition().X + (r / 2) < r_right ||
+		circle->GetPosition().X - (r / 2) > r_left ||
+		circle->GetPosition().Y + (r / 2) < r_top ||
+		circle->GetPosition().Y - (r / 2) > r_bottom)
+	{
+		CollisionEffect(circle);
+	}
 }
