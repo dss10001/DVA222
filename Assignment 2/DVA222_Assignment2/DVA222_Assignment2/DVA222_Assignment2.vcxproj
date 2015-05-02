@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
+    <ClInclude Include="BlueBox.h" />
     <ClInclude Include="Graphix.h" />
     <ClInclude Include="HorizontalLine.h" />
     <ClInclude Include="Line.h" />
@@ -94,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="BlueBox.cpp" />
     <ClCompile Include="DVA222_Assignment2.cpp" />
     <ClCompile Include="Graphix.cpp" />
     <ClCompile Include="HorizontalLine.cpp" />

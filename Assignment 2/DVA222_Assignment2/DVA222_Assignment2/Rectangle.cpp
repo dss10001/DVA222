@@ -5,14 +5,17 @@ Rectangle::Rectangle()
 {
 	this->width = 0;
 	this->height = 0;
+	position.X = 0;
+	position.Y = 0;
 	Red = 0;
 	Green = 0;
 	Blue = 0;
 }
-Rectangle::Rectangle(int width, int height)
+Rectangle::Rectangle(Point position, int width, int height)
 {
 	this->width = width;
 	this->height = height;
+	this->position = position;
 	Red = 0;
 	Green = 0;
 	Blue = 0;
