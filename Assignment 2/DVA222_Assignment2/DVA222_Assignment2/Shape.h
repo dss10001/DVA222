@@ -23,7 +23,7 @@ public:
 
 	virtual void Draw() = 0;
 	virtual void Update(){}
-	virtual void Collide(){}
+	virtual void CircleCollission(Point s, int r){}
 
 	Point GetPosition();
 

@@ -18,7 +18,7 @@ void DrawLine(int x1, int y1, int x2, int y2 )
     glEnd();    
 }
 
-void DrawRectanle(int x, int y, int width, int height )
+void DrawRectangle(int x, int y, int width, int height )
 {
 	glBegin(GL_LINE_LOOP);
         glVertex3f(x, y, 0.0);
@@ -40,7 +40,7 @@ void DrawCircle(int cx, int cy, int radius )
     glEnd();    
 }
 
-void FillRectanle(int x, int y, int width, int height )
+void FillRectangle(int x, int y, int width, int height )
 {
 	glBegin(GL_QUADS);
         glVertex3f(x, y, 0.0);
