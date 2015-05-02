@@ -11,7 +11,7 @@
 #include "HorizontalLine.h"
 #include "VerticalLine.h"
 
-int linesCount = 4;
+int linesCount = 6;
 int ballCount = 10;
 
 Ball **balls = new Ball*[ballCount];
@@ -31,10 +31,12 @@ int _tmain(int argc, char** argv)
 		balls[i] = new Ball(400, 300, 10);
 		balls[i]->SetSpeed(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
 	}
-	lines[0] = new VerticalLine(Point(50,50), 200);
-	lines[1] = new VerticalLine(Point(0, 0), 200);
-	lines[2] = new HorizontalLine(Point(0, 0), 200);
-	lines[3] = new HorizontalLine(Point(0, 0), 200);
+	lines[0] = new VerticalLine(Point(50,80), 400);
+	lines[1] = new VerticalLine(Point(250, 75), 200);
+	lines[2] = new VerticalLine(Point(500, 275), 200);
+	lines[3] = new VerticalLine(Point(750, 150), 400);
+	lines[4] = new HorizontalLine(Point(50, 25), 700);
+	lines[5] = new HorizontalLine(Point(50, 590), 700);
 	
 	//NOTE:
 	//----------------------------------------------------------------------
