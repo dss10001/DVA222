@@ -22,8 +22,8 @@ public:
 	~Shape(void);
 
 	virtual void Draw() = 0;
-	virtual void Update()
-	{}
+	virtual void Update(){}
+	virtual void Collide(){}
 
 	Point GetPosition();
 
