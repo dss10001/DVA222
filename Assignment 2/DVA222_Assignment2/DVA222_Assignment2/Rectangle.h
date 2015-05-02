@@ -5,7 +5,7 @@ class Rectangle: Shape
 public:
 	int width, height;
 
-	virtual void CircleCollision(Point position, int radius);
+	virtual void CircleCollision(Point p, int r);
 
 	Rectangle();
 	~Rectangle();
