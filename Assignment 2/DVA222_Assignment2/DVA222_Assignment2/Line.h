@@ -12,7 +12,8 @@ public:
 
 	Vector GetOutDirection(Vector *incomingDirection);
 
-	Point GetPosition();
+	Point GetPosition() const { return position; };
+	Point GetSecondPosition() const { return secondPosition; };
 
 	virtual void Draw() override;
 
