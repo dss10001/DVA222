@@ -31,3 +31,8 @@ void Rectangle::CircleCollision(Ball* circle, Point p, int r)
 		CollisionEffect(circle);
 	}
 }
+void Rectangle::Draw()
+{
+	SetColor(Red, Green, Blue);
+	DrawRectanle(position.X, position.Y, width, height);
+}

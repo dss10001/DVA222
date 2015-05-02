@@ -85,6 +85,7 @@
     <ClInclude Include="HorizontalLine.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="RedBox.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Structs.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="HorizontalLine.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RedBox.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="VerticalLine.cpp" />

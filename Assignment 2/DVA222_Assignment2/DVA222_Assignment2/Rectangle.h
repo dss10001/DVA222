@@ -1,6 +1,7 @@
 #pragma once
 #include "Shape.h"
 #include "Ball.h"
+#include "Graphix.h"
 class Rectangle: Shape
 {
 public:
