@@ -35,10 +35,12 @@ void Rectangle::CircleCollision(Ball* circle)
 	r_top = position.Y;
 	r_bottom = position.Y + height;
 
-	if (circle->GetPosition().X + (circle->GetRadius() / 2) > r_left &&
-		circle->GetPosition().X - (circle->GetRadius() / 2) < r_right &&
-		circle->GetPosition().Y + (circle->GetRadius() / 2) > r_top &&
-		circle->GetPosition().Y - (circle->GetRadius() / 2) < r_bottom)
+	double halfRadius = circle->GetRadius() / 2;
+
+	if (circle->GetPosition().X + halfRadius > r_left &&
+		circle->GetPosition().X - halfRadius < r_right &&
+		circle->GetPosition().Y + halfRadius > r_top &&
+		circle->GetPosition().Y - halfRadius < r_bottom)
 	{
 		CollisionEffect(circle);
 	}
