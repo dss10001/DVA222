@@ -19,3 +19,8 @@ HorizontalLine::HorizontalLine(Point p1, double length) : Line(p1, Point(p1.X + 
 HorizontalLine::~HorizontalLine()
 {
 }
+
+void HorizontalLine::CollisionEffect(Ball* circle)
+{
+	
+}

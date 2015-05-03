@@ -15,7 +15,7 @@
 #include "BlueBox.h"
 
 int linesCount = 6;
-int ballCount = 1;
+int ballCount = 100;
 int rectangleCount = 4;
 
 Ball **balls = new Ball*[ballCount];

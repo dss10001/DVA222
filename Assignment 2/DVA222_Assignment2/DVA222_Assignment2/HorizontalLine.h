@@ -8,5 +8,7 @@ public:
 	HorizontalLine(Point p1, double length);
 	~HorizontalLine();
 
+	virtual void CollisionEffect(Ball* circle) override;
+
 };
 
