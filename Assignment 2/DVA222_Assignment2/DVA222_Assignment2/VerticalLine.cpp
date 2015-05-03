@@ -22,5 +22,5 @@ VerticalLine::~VerticalLine()
 
 void VerticalLine::CollisionEffect(Ball* circle)
 {
-	//circle->SetSpeed()
+	circle->SetDirection(Vector(circle->GetDirection().X*-1, circle->GetDirection().Y));
 }

@@ -22,5 +22,5 @@ HorizontalLine::~HorizontalLine()
 
 void HorizontalLine::CollisionEffect(Ball* circle)
 {
-	
+	circle->SetDirection(Vector(circle->GetDirection().X, circle->GetDirection().Y*-1));
 }
