@@ -1,8 +1,9 @@
 #pragma once
 #include "Shape.h"
 #include "Graphix.h"
+#include "ICollision.h"
 
-class Line : public Shape
+class Line : public Shape, protected ICollision
 {
 protected:
 	int red, green, blue;
@@ -20,6 +21,8 @@ public:
 	virtual void Draw() override;
 
 	virtual void Update() override;
+
+	virtual void CollisionEffect(Ball* circle) override;
 
 };
 

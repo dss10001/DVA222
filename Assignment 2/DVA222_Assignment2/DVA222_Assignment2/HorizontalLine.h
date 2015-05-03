@@ -7,5 +7,6 @@ public:
 	HorizontalLine();
 	HorizontalLine(Point p1, double length);
 	~HorizontalLine();
+
 };
 

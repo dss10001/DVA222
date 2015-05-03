@@ -85,6 +85,7 @@
     <ClInclude Include="Graphix.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="HorizontalLine.h" />
+    <ClInclude Include="ICollision.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RedBox.h" />

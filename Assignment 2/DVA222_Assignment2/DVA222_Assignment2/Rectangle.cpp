@@ -48,3 +48,7 @@ void Rectangle::Draw()
 	SetColor(Red, Green, Blue);
 	DrawRectangle(position.X, position.Y, width, height);
 }
+void Rectangle::Update()
+{
+
+}
