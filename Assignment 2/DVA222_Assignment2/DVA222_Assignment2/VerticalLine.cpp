@@ -19,3 +19,8 @@ VerticalLine::VerticalLine(Point p1, double length) : Line(p1, Point(p1.X, p1.Y 
 VerticalLine::~VerticalLine()
 {
 }
+
+void VerticalLine::CollisionEffect(Ball* circle)
+{
+	//circle->SetSpeed()
+}

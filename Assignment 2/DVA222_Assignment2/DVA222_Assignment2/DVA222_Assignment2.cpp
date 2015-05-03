@@ -98,6 +98,7 @@ void Draw()
 	}
 	for (int i = 0; i < rectangleCount; i++)
 	{
+		boxes[i]->Update();
 		boxes[i]->Draw();
 	}
 

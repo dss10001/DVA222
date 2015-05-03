@@ -28,3 +28,7 @@ void Line::Update()
 {
 	//No need to check update on something that do not move.
 }
+
+void Line::CollisionEffect(Ball* circle)
+{
+}
