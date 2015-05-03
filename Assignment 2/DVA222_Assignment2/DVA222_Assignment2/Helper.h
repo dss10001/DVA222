@@ -19,4 +19,13 @@ namespace Helper
 		}
 		return vec;
 	}
+
+	bool IsInRange(double v1, double v2, double e)
+	{
+		if (e > v1 && e < v2)
+		{
+			return true;
+		}
+		return false;
+	}
 }

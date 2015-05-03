@@ -13,6 +13,7 @@ public:
 	~Line();
 	Line(Point p1, Point p2);
 
+	virtual void CircleCollission(Ball* circle){};
 	Vector GetOutDirection(Vector *incomingDirection);
 
 	Point GetPosition() const { return position; };

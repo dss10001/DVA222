@@ -83,6 +83,7 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="BlueBox.h" />
     <ClInclude Include="Graphix.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="HorizontalLine.h" />
     <ClInclude Include="ICollision.h" />
     <ClInclude Include="Line.h" />

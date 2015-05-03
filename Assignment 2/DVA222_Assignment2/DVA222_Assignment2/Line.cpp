@@ -32,3 +32,4 @@ void Line::Update()
 void Line::CollisionEffect(Ball* circle)
 {
 }
+
