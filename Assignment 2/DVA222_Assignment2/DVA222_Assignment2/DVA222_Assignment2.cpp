@@ -15,7 +15,11 @@
 #include "BlueBox.h"
 
 int linesCount = 6;
+<<<<<<< HEAD
 int ballCount = 100;
+=======
+int ballCount = 20;
+>>>>>>> origin/master
 int rectangleCount = 4;
 
 Ball **balls = new Ball*[ballCount];
@@ -34,7 +38,7 @@ int _tmain(int argc, char** argv)
 	for(int i = 0; i < ballCount; i++)
 	{
 		balls[i] = new Ball(400, 300, 10);
-		balls[i]->SetSpeed(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
+		balls[i]->SetDirection(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
 	}
 	lines[0] = new VerticalLine(Point(50,80), 400);
 	lines[1] = new VerticalLine(Point(250, 75), 200);

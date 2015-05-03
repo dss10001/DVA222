@@ -30,36 +30,18 @@ Rectangle::~Rectangle()
 void Rectangle::CircleCollision(Ball* circle)
 {
 	double r_right, r_left, r_top, r_bottom;
-	r_right = position.X + (width / 2);
-	r_left = position.X - (width / 2);
-	r_top = position.Y - (height / 2);
-	r_bottom = position.Y + (height / 2);
+	r_right = position.X + width;
+	r_left = position.X;
+	r_top = position.Y;
+	r_bottom = position.Y + height;
 
-	if (circle->GetPosition().X < r_left + circle->GetRadius() / 2 ||
-		circle->GetPosition().X > r_right - circle->GetRadius() / 2 ||
-		circle->GetPosition().Y < r_top + circle->GetRadius() / 2 ||
-		circle->GetPosition().Y > r_bottom - circle->GetRadius() / 2)
-	{
-		// do nothing
-	}
-	else
+	if (circle->GetPosition().X + (circle->GetRadius() / 2) > r_left &&
+		circle->GetPosition().X - (circle->GetRadius() / 2) < r_right &&
+		circle->GetPosition().Y + (circle->GetRadius() / 2) > r_top &&
+		circle->GetPosition().Y - (circle->GetRadius() / 2) < r_bottom)
 	{
 		CollisionEffect(circle);
 	}
-
-
-	//if (circle->GetPosition().X - (circle->GetRadius() / 2) > r_right ||
-	//	circle->GetPosition().X + (circle->GetRadius() / 2) < r_left ||
-	//	circle->GetPosition().Y - (circle->GetRadius() / 2) > r_top ||
-	//	circle->GetPosition().Y + (circle->GetRadius() / 2) < r_bottom)
-	//{
-	//	// do nothing
-	//	int test = 0;
-	//}
-	//else
-	//{
-	//	CollisionEffect(circle);
-	//}
 }
 void Rectangle::Draw()
 {

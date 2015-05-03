@@ -21,8 +21,7 @@ RedBox::~RedBox()
 
 void RedBox::CollisionEffect(Ball* circle)
 {
-	Vector tmp_speed = circle->GetSpeed();
-	tmp_speed.X += 0.1;
-	tmp_speed.Y += 0.1;
+	double tmp_speed = circle->GetSpeed();
+	tmp_speed += 0.5;
 	circle->SetSpeed(tmp_speed);
 }

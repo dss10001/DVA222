@@ -8,6 +8,6 @@ public:
 	~BlueBox();
 
 protected:
-	virtual void CollisionEffects(Ball* circle);
+	virtual void CollisionEffect(Ball* circle);
 };
 
