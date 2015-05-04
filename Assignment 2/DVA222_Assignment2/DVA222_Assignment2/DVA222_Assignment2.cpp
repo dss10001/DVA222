@@ -69,7 +69,7 @@ void CollissionCheck()
 		}
 		for (int l = 0; l < linesCount; l++)
 		{
-
+			lines[l]->CircleCollission(balls[i]);
 		}
 	}
 }

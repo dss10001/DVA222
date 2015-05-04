@@ -1,5 +1,5 @@
 #include "VerticalLine.h"
-
+#include "Helper.h"
 
 VerticalLine::VerticalLine()
 {
@@ -20,7 +20,20 @@ VerticalLine::~VerticalLine()
 {
 }
 
+void VerticalLine::CircleCollission(Ball* circle)
+{
+	if (Helper::IsInRange(position.Y, secondPosition.Y, circle->GetPosition().Y))
+	{
+		if (Helper::IsInRange((position.X - circle->GetRadius() / 2), (position.X + circle->GetRadius() / 2), circle->GetPosition().X))
+		{
+			CollisionEffect(circle);
+		}
+	}
+}
+
 void VerticalLine::CollisionEffect(Ball* circle)
 {
-	circle->SetDirection(Vector(circle->GetDirection().X*-1, circle->GetDirection().Y));
+	Vector tmp = circle->GetDirection();
+	tmp.X = tmp.X * -1;
+	circle->SetDirection(tmp);
 }

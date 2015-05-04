@@ -8,7 +8,7 @@ public:
 	~VerticalLine();
 
 	virtual void CollisionEffect(Ball* circle) override;
-
+	virtual void CircleCollission(Ball* circle) override;
 
 };
 

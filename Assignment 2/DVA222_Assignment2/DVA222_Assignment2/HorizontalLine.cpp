@@ -24,15 +24,17 @@ void HorizontalLine::CircleCollission(Ball* circle)
 {
 	if (Helper::IsInRange(position.X, secondPosition.X, circle->GetPosition().X))
 	{
-		/*if (Helper::IsInRange((position.Y - circle->GetRadius() / 2), (position.Y + circle->GetRadius() / 2), circle->GetPosition().Y))
+		if (Helper::IsInRange((position.Y - circle->GetRadius() / 2), (position.Y + circle->GetRadius() / 2), circle->GetPosition().Y))
 		{
-		}*/
+			CollisionEffect(circle);
+		}
 	}
-
 }
 
 void HorizontalLine::CollisionEffect(Ball* circle)
 {
-	circle->SetDirection(Vector(circle->GetDirection().X, circle->GetDirection().Y*-1));
+	Vector tmp = circle->GetDirection();
+	tmp.Y = tmp.Y * -1;
+	circle->SetDirection(tmp);
 }
 

@@ -1,3 +1,4 @@
+#pragma once
 //----------------------------------------------------------------------
 //These are some basic structures that we use in the code to make it more
 //readable and organized. I think you do not have to do anything here apart

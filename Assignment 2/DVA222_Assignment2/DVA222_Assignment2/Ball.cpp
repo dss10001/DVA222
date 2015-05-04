@@ -40,7 +40,7 @@ double Ball::GetRadius()
 
 void Ball::SetSpeed(double newSpeed)
 {
-	speed = newSpeed;
+	speed = Helper::clamp(0.1, 100, newSpeed);;
 }
 
 double Ball::GetSpeed()
