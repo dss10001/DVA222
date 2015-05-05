@@ -54,8 +54,8 @@ int _tmain(int argc, char** argv)
 	//Don't touch this line, Don't write anything after it
 	//Simply just don't do anything after this point ==> . 
 	//----------------------------------------------------------------------
-    InitGraphix(argc, argv);
-    return 0;
+	InitGraphix(argc, argv);
+	return 0;
 }
 
 
