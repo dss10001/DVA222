@@ -90,6 +90,7 @@
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RedBox.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="SolidShape.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="targetver.h" />
@@ -106,6 +107,7 @@
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RedBox.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="SolidShape.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="VerticalLine.cpp" />
   </ItemGroup>

@@ -6,5 +6,6 @@ class ICollision
 {
 public:
 	virtual void CollisionEffect(Ball* circle){}
+	virtual void CircleCollision(Ball* circle){}
 };
 #endif

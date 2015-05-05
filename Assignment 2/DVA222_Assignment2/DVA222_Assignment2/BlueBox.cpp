@@ -22,6 +22,6 @@ BlueBox::~BlueBox()
 void BlueBox::CollisionEffect(Ball* circle)
 {
 	double tmp_speed = circle->GetSpeed();
-	tmp_speed += -0.01;
+	tmp_speed += -0.04;
 	circle->SetSpeed(tmp_speed);
 }

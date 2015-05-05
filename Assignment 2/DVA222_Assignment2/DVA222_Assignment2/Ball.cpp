@@ -9,12 +9,13 @@ Ball::Ball(int x, int y, int r)
 	position.X = x;
 	position.Y = y;
 	radius = r;
-	speed = 2;
+	speed = 3;
 }
 
 //Destructor
 Ball::~Ball(void)
 {
+
 }
 
 //Overrided Draw function

@@ -20,7 +20,7 @@ HorizontalLine::~HorizontalLine()
 {
 }
 
-void HorizontalLine::CircleCollission(Ball* circle)
+void HorizontalLine::CircleCollision(Ball* circle)
 {
 	if (Helper::IsInRange(position.X, secondPosition.X, circle->GetPosition().X))
 	{

@@ -20,7 +20,7 @@ VerticalLine::~VerticalLine()
 {
 }
 
-void VerticalLine::CircleCollission(Ball* circle)
+void VerticalLine::CircleCollision(Ball* circle)
 {
 	if (Helper::IsInRange(position.Y, secondPosition.Y, circle->GetPosition().Y))
 	{

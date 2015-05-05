@@ -13,14 +13,14 @@
 #include "Rectangle.h"
 #include "RedBox.h"
 #include "BlueBox.h"
+#include "SolidShape.h"
 
 int linesCount = 6;
 int ballCount = 100;
 int rectangleCount = 4;
 
 Ball **balls = new Ball*[ballCount];
-Line **lines = new Line*[linesCount];
-Rectangle **boxes = new Rectangle*[rectangleCount];
+SolidShape **objects = new SolidShape*[linesCount + rectangleCount];
 
 		 
 int _tmain(int argc, char** argv)
@@ -36,17 +36,17 @@ int _tmain(int argc, char** argv)
 		balls[i] = new Ball(400, 300, 10);
 		balls[i]->SetDirection(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
 	}
-	lines[0] = new VerticalLine(Point(50,80), 400);
-	lines[1] = new VerticalLine(Point(250, 75), 200);
-	lines[2] = new VerticalLine(Point(500, 275), 200);
-	lines[3] = new VerticalLine(Point(750, 150), 400);
-	lines[4] = new HorizontalLine(Point(50, 25), 700);
-	lines[5] = new HorizontalLine(Point(50, 590), 700);
+	objects[0] = new VerticalLine(Point(50, 80), 400);
+	objects[1] = new VerticalLine(Point(250, 75), 200);
+	objects[2] = new VerticalLine(Point(500, 275), 200);
+	objects[3] = new VerticalLine(Point(750, 150), 400);
+	objects[4] = new HorizontalLine(Point(50, 25), 700);
+	objects[5] = new HorizontalLine(Point(50, 590), 700);
 
-	boxes[0] = new BlueBox(Point(100, 400), 80, 50);
-	boxes[1] = new BlueBox(Point(500, 100), 80, 50);
-	boxes[2] = new RedBox(Point(100, 100), 80, 50);
-	boxes[3] = new RedBox(Point(500, 500), 80, 50);
+	objects[6] = new BlueBox(Point(100, 400), 80, 50);
+	objects[7] = new BlueBox(Point(500, 100), 80, 50);
+	objects[8] = new RedBox(Point(100, 100), 80, 50);
+	objects[9] = new RedBox(Point(500, 500), 80, 50);
 	
 	//NOTE:
 	//----------------------------------------------------------------------
@@ -63,13 +63,9 @@ void CollissionCheck()
 {
 	for (int i = 0; i < ballCount; i++)
 	{
-		for (int r = 0; r < rectangleCount; r++)
+		for (int r = 0; r < (rectangleCount + linesCount); r++)
 		{
-			boxes[r]->CircleCollision(balls[i]);
-		}
-		for (int l = 0; l < linesCount; l++)
-		{
-			lines[l]->CircleCollission(balls[i]);
+			objects[r]->CircleCollision(balls[i]);
 		}
 	}
 }
@@ -91,15 +87,10 @@ void Draw()
 		balls[i]->Update();
 		balls[i]->Draw();
 	}
-	for (int i = 0; i < linesCount; i++)
+	for (int i = 0; i < (linesCount + rectangleCount); i++)
 	{
-		lines[i]->Update();
-		lines[i]->Draw();
-	}
-	for (int i = 0; i < rectangleCount; i++)
-	{
-		boxes[i]->Update();
-		boxes[i]->Draw();
+		objects[i]->Update();
+		objects[i]->Draw();
 	}
 
 	Redraw();

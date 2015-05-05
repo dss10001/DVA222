@@ -1,9 +1,9 @@
 #pragma once
-#include "Shape.h"
+#include "SolidShape.h"
 #include "Ball.h"
 #include "Graphix.h"
 #include "ICollision.h"
-class Rectangle: Shape, ICollision
+class Rectangle: public SolidShape
 {
 public:
 	int width, height;

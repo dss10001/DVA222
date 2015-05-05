@@ -1,9 +1,9 @@
 #pragma once
-#include "Shape.h"
+#include "SolidShape.h"
 #include "Graphix.h"
 #include "ICollision.h"
 
-class Line : public Shape, protected ICollision
+class Line : public SolidShape
 {
 protected:
 	int red, green, blue;
