@@ -2,7 +2,9 @@
 class IIntSet
 {
 protected:
-	int size;
+	int size;	// size of Array
+	int count;	// count of elements
+	/* Function to extend a array by the size of 'value'. */
 	virtual void ExtendArray(int value) = 0;
 public:
 
