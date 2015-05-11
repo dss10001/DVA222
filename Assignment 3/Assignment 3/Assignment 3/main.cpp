@@ -1,7 +1,5 @@
 #include <iostream>
 #include "IIntSet.h"
-#include "BasicIntSet.h"
-#include "IntervalSet.h"
 
 using std::cout;
 void main()
@@ -18,9 +16,9 @@ void main()
 	s2->Add(101);
 	s2->Add(102);
 
-	IInstSet *s3;
+	IIntSet *s3;
 	s3 = s1.Union(s2);
 
 
-	cout << s3.ToString();
+	cout << s3->ToString();
 }
