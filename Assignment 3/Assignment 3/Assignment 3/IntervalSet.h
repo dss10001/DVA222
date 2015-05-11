@@ -9,6 +9,7 @@ class IntervalSet : public IIntSet
 {
 private:
 	Interval *intervalOfInts;
+	virtual void ExtendArray(int value);
 public:
 	
 	IntervalSet();
@@ -18,5 +19,8 @@ public:
 
 	virtual void Add(int elem) override;
 
+	virtual IIntSet* Union(IIntSet &other) override;
+
+	virtual char* ToString() override;
 };
 
