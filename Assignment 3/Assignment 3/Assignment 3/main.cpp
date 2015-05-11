@@ -19,7 +19,7 @@ void main()
 	s2->Add(102);
 
 	IIntSet *s3;
-	s3 = s1->Union(s2);
+	s3 = s1->Union(*s2);
 
 
 	cout << s3->ToString();
