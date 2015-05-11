@@ -1,5 +1,6 @@
 #pragma once
 #include "IIntSet.h"
+#include "IntervalSet.h"
 class BasicIntSet : public IIntSet
 {
 public:
@@ -16,5 +17,6 @@ public:
 
 private:
 	virtual void ExtendArray(int value) override;
+	int* SetOfInts;
 };
 
