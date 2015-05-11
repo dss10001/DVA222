@@ -1,6 +1,8 @@
 #pragma once
 class IIntSet
 {
+protected:
+	int size;
 public:
 	/* The constructor */
 	IIntSet();
