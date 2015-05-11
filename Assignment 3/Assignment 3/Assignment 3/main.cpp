@@ -1,5 +1,7 @@
 #include <iostream>
 #include "IIntSet.h"
+#include "BasicIntSet.h"
+#include "IntervalSet.h"
 
 using std::cout;
 void main()

@@ -78,10 +78,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BasicIntSet.h" />
     <ClInclude Include="IIntSet.h" />
+    <ClInclude Include="IntervalSet.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BasicIntSet.cpp" />
     <ClCompile Include="IIntSet.cpp" />
+    <ClCompile Include="IntervalSet.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

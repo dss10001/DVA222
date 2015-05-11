@@ -18,12 +18,24 @@
     <ClInclude Include="IIntSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BasicIntSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IntervalSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IIntSet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicIntSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IntervalSet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
