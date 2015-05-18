@@ -1,10 +1,11 @@
 #pragma once
 #include "IIntSet.h"
 #include "Interval.h"
+#include <algorithm>    // std::copy
+
 class UnionIntSet : public IIntSet
 {
-	int *arrayOfInts;
-	Interval *intervalOfInts;
+	int *arrayOfIntsOne, *arrayOfIntsTwo;
 public:
 	UnionIntSet();
 	~UnionIntSet();
