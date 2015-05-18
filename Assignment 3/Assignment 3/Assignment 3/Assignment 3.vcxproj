@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClInclude Include="BasicIntSet.h" />
     <ClInclude Include="IIntSet.h" />
+    <ClInclude Include="Interval.h" />
     <ClInclude Include="IntervalSet.h" />
     <ClInclude Include="UnionIntSet.h" />
   </ItemGroup>

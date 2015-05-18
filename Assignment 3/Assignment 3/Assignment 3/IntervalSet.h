@@ -2,11 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "IIntSet.h"
-struct Interval
-{
-	int intervalStart, intervalEnd;
-
-};
+#include "Interval.h"
 class IntervalSet : public IIntSet
 {
 private:
