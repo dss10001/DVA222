@@ -27,16 +27,23 @@ void IntervalSet::Add(int elem)
 {
 	if (!Contains(elem))
 	{
-		if (size /*== count*/)
+		if (size == count)
 		{
-			ExtendArray(1);
+			ExtendArray(10);
 		}
 
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i < count; i++)
 		{
 			if (elem >= intervalOfInts[i].intervalStart && elem <= intervalOfInts[i].intervalEnd)
 			{
 
+			}
+			else if (elem >= intervalOfInts[i].intervalEnd && elem <= intervalOfInts[i + 1].intervalStart)
+			{
+				// left fusion
+				// right fusion
+				// double dusion
+				// standAlone
 			}
 		}
 		for (int i = 0; i < size; i++)
