@@ -17,6 +17,9 @@ public:
 
 	int* getIntArray() { return SetOfInts; };
 
+	virtual void getSetArray(int* Dest){};
+	virtual int getSetSize(){ return size; };
+
 private:
 	virtual void ExtendArray(int value) override;
 	int* SetOfInts;

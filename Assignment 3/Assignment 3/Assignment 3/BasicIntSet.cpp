@@ -59,8 +59,7 @@ void BasicIntSet::ExtendArray(int value)
 
 IIntSet* BasicIntSet::Union(IIntSet &other)
 {
-
-	UnionIntSet* tmp = new UnionIntSet();
+	throw "The method or operation is not implemented.";
 }
 
 char* BasicIntSet::ToString()
@@ -74,3 +73,4 @@ char* BasicIntSet::ToString()
 	oss << "}";
 	return (char*)oss.str().c_str();
 }
+

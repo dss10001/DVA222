@@ -21,4 +21,6 @@ public:
 
 	/* Return an array of integers that contains all the individual values in this set. */
 	virtual char* ToString() = 0;
+	virtual void getSetArray(int* Dest) = 0;
+	virtual int getSetSize() = 0;
 };
