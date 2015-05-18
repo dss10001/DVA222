@@ -56,15 +56,15 @@ void IntervalSet::ExtendArray(int value)
 
 IIntSet* IntervalSet::Union(IIntSet &other)
 {
-
+	return NULL;
 }
 
 char* IntervalSet::ToString()
 {
-
+	return NULL;
 }
 
-void IntervalSet::getSetArray(int* Dest)
+void IntervalSet::cpySetArray(int* Dest)
 {
 	//Gets count of elements
 	int actualSize = 0, min, max;
