@@ -31,6 +31,7 @@ void IntervalSet::Add(int elem)
 		{
 			ExtendArray(1);
 		}
+
 		for (int i = 0; i < size; i++)
 		{
 			if (elem >= intervalOfInts[i].intervalStart && elem <= intervalOfInts[i].intervalEnd)
@@ -57,6 +58,7 @@ void IntervalSet::ExtendArray(int value)
 IIntSet* IntervalSet::Union(IIntSet &other)
 {
 	return NULL;
+
 }
 
 char* IntervalSet::ToString()
