@@ -21,6 +21,5 @@ public:
 	virtual char* ToString() override;
 
 	virtual void getSetArray(int* Dest){};
-	virtual int getSetSize(){ return size; };
 };
 

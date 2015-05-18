@@ -17,8 +17,10 @@ public:
 
 	int* getIntArray() { return SetOfInts; };
 
-	virtual void getSetArray(int* Dest){};
-	virtual int getSetSize(){ return size; };
+	virtual void getSetArray(int* Dest)
+	{
+		memcpy(Dest, SetOfInts, sizeof(int*)*size);
+	};
 
 private:
 	virtual void ExtendArray(int value) override;
