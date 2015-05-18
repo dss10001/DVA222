@@ -3,12 +3,11 @@
 
 UnionIntSet::UnionIntSet(int *arrayOfInts, int *arrayOfIntsTwo)
 {
-	
+	std::copy(arrayOfInts, (int)(sizeof(arrayOfInts) / sizeof(*arrayOfInts)), arrayOfIntsOne);
 }
 
 UnionIntSet::~UnionIntSet()
 {
-
 }
 
 void UnionIntSet::ExtendArray(int value)

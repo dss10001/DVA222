@@ -7,7 +7,7 @@ class UnionIntSet : public IIntSet
 {
 	int *arrayOfIntsOne, *arrayOfIntsTwo;
 public:
-	UnionIntSet();
+	UnionIntSet(int *arrayOfInts, int *arrayOfIntsTwo);
 	~UnionIntSet();
 
 	virtual void ExtendArray(int value) override;
