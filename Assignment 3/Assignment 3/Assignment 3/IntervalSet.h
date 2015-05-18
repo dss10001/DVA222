@@ -7,6 +7,7 @@ class IntervalSet : public IIntSet
 {
 private:
 	Interval *intervalOfInts;
+	int count;
 	virtual void ExtendArray(int value);
 public:
 	
@@ -21,6 +22,6 @@ public:
 
 	virtual char* ToString() override;
 
-	virtual void getSetArray(int* Dest){};
+	virtual void getSetArray(int* Dest);
 };
 

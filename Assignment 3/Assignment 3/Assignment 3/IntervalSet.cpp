@@ -4,6 +4,7 @@
 IntervalSet::IntervalSet()
 {
 	size = 0;
+	count = 0;
 	intervalOfInts = new Interval[size];
 
 }
@@ -41,6 +42,7 @@ void IntervalSet::Add(int elem)
 		{
 
 		}
+		count++;
 	}
 }
 
@@ -60,4 +62,27 @@ IIntSet* IntervalSet::Union(IIntSet &other)
 char* IntervalSet::ToString()
 {
 
+}
+
+void IntervalSet::getSetArray(int* Dest)
+{
+	//Gets count of elements
+	int actualSize = 0, min, max;
+	for (int i = 0; i < count;i++)
+	{
+		min = intervalOfInts[i].intervalStart;
+		max = intervalOfInts[i].intervalEnd;
+		actualSize += max - min;
+	}
+	int index = 0/*,min,max*/;
+	for (int i = 0; i < count; i++)
+	{
+		min = intervalOfInts[i].intervalStart;
+		max = intervalOfInts[i].intervalEnd;
+		for (int r = min; r <= max;r++)
+		{
+			Dest[index] = r;
+			index++;
+		}
+	}
 }
