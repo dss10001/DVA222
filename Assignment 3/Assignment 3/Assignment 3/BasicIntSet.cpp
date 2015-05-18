@@ -59,8 +59,11 @@ void BasicIntSet::ExtendArray(int value)
 
 IIntSet* BasicIntSet::Union(IIntSet &other)
 {
-
-	UnionIntSet* tmp = new UnionIntSet();
+	int* set1 = getSetArray();
+	int* set2 = other.getSetArray();
+	/*UnionIntSet* _union = new UnionIntSet();
+	return _union;*/
+	return &other;
 }
 
 char* BasicIntSet::ToString()

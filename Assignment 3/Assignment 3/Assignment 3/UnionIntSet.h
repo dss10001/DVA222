@@ -6,7 +6,7 @@ class UnionIntSet : public IIntSet
 	int *arrayOfInts;
 	Interval *intervalOfInts;
 public:
-	UnionIntSet(int *arrayOfInts, Interval *intervalOfInts);
+	UnionIntSet();
 	~UnionIntSet();
 
 	virtual void ExtendArray(int value) override;
@@ -18,6 +18,11 @@ public:
 	virtual IIntSet* Union(IIntSet &other) override;
 
 	virtual char* ToString() override;
+
+	virtual int* getSetArray()
+	{
+		return 0;
+	}
 
 };
 

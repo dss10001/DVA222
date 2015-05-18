@@ -20,5 +20,10 @@ public:
 	virtual IIntSet* Union(IIntSet &other) override;
 
 	virtual char* ToString() override;
+
+	virtual int* getSetArray()
+	{
+		return 0;
+	};
 };
 
