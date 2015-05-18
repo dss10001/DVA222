@@ -1,12 +1,13 @@
 #pragma once
 #include "IIntSet.h"
 #include "Interval.h"
+#include <algorithm>    // std::copy
+
 class UnionIntSet : public IIntSet
 {
-	int *arrayOfInts;
-	Interval *intervalOfInts;
+	int *arrayOfIntsOne, *arrayOfIntsTwo;
 public:
-	UnionIntSet(int *arrayOfInts, Interval *intervalOfInts);
+	UnionIntSet(int *arrayOfInts, int *arrayOfIntsTwo);
 	~UnionIntSet();
 
 	virtual void ExtendArray(int value) override;
