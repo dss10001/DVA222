@@ -15,9 +15,7 @@ public:
 
 	virtual char* ToString() override;
 
-	int* getIntArray() { return SetOfInts; };
-
-	virtual void getSetArray(int* Dest)
+	virtual void cpySetArray(int* Dest)
 	{
 		memcpy(Dest, SetOfInts, sizeof(int*)*size);
 	};

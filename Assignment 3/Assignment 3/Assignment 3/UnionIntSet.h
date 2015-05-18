@@ -20,6 +20,9 @@ public:
 
 	virtual char* ToString() override;
 
-	virtual void getSetArray(int* Dest){};
+	virtual void cpySetArray(int* Dest){};
+
+	void setSet1(int* Array) {};
+	void setSet2(int* Array) {};
 };
 

@@ -59,7 +59,18 @@ void BasicIntSet::ExtendArray(int value)
 
 IIntSet* BasicIntSet::Union(IIntSet &other)
 {
-	throw "The method or operation is not implemented.";
+	// create objects, bad solution.
+	UnionIntSet* _union = new UnionIntSet();
+	int* s1 = new int[getSetNumOfElements()];
+	int* s2 = new int[other.getSetNumOfElements()]; // sum(n intervals)
+	// copy set information.
+	cpySetArray(s1);
+	other.cpySetArray(s2);
+	// set 'set' information
+	_union->setSet1(s1);
+	_union->setSet2(s2);
+
+	return _union;
 }
 
 char* BasicIntSet::ToString()
