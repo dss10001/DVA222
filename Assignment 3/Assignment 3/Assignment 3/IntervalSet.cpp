@@ -27,6 +27,9 @@ void IntervalSet::Add(int elem)
 {
 	if (!Contains(elem))
 	{
+		int actionCount = 0;	// count number of overwritten intervals by 'elem'
+		int index1, index2;		// indeces of overwritten interval elements. 
+
 		if (size == count)
 		{
 			ExtendArray(10);
@@ -34,23 +37,41 @@ void IntervalSet::Add(int elem)
 
 		for (int i = 0; i < count; i++)
 		{
-			if (elem >= intervalOfInts[i].intervalStart && elem <= intervalOfInts[i].intervalEnd)
+			if (elem == intervalOfInts[i].intervalStart - 1)
 			{
-
+				// set intervalstart to elem
+				intervalOfInts[i].intervalStart = elem;
+				actionCount++;
+				index2 = i;
 			}
-			else if (elem >= intervalOfInts[i].intervalEnd && elem <= intervalOfInts[i + 1].intervalStart)
+			else if (elem == intervalOfInts[i].intervalEnd + 1)
 			{
-				// left fusion
-				// right fusion
-				// double dusion
-				// standAlone
+				// set intervalend to elem
+				intervalOfInts[i].intervalEnd = elem;
+				actionCount++;
+				index1 = i;
 			}
 		}
-		for (int i = 0; i < size; i++)
+		if (actionCount == 0)
 		{
-
+			// Add new standalone interval
+			Interval newInterval;
+			newInterval.intervalStart = newInterval.intervalEnd = elem;
+			intervalOfInts[count] = newInterval;
+			count++;
 		}
-		count++;
+		else if (actionCount == 2)
+		{
+			// extend interval to represent both intervals
+			intervalOfInts[index1].intervalEnd = intervalOfInts[index2].intervalEnd;
+			// compact intervalArray to fill empty space
+			for (int i = index2; i < count; i++)
+			{
+				intervalOfInts[i] = intervalOfInts[i + 1];
+			}
+			// subtract element count. 
+			count--;
+		}
 	}
 }
 
