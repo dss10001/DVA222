@@ -15,6 +15,8 @@ public:
 
 	virtual char* ToString() override;
 
+	int* getIntArray() { return SetOfInts; };
+
 private:
 	virtual void ExtendArray(int value) override;
 	int* SetOfInts;

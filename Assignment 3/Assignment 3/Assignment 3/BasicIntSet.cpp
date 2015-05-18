@@ -1,4 +1,6 @@
 #include "BasicIntSet.h"
+#include "IntervalSet.h"
+#include "UnionIntSet.h"
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -12,7 +14,6 @@ BasicIntSet::BasicIntSet()
 	count = 0;
 	SetOfInts = new int[size];
 }
-
 
 BasicIntSet::~BasicIntSet()
 {
@@ -58,7 +59,8 @@ void BasicIntSet::ExtendArray(int value)
 
 IIntSet* BasicIntSet::Union(IIntSet &other)
 {
-	throw "The method or operation is not implemented.";
+
+	UnionIntSet* tmp = new UnionIntSet();
 }
 
 char* BasicIntSet::ToString()
