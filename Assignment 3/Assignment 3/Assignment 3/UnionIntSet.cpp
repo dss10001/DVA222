@@ -13,7 +13,7 @@ UnionIntSet::~UnionIntSet()
 
 void UnionIntSet::ExtendArray(int value)
 {
-	
+	throw "The method or operation is not implemented.";
 }
 
 bool UnionIntSet::Contains(int elem)
@@ -23,7 +23,7 @@ bool UnionIntSet::Contains(int elem)
 
 void UnionIntSet::Add(int elem)
 {
-	
+	throw "The method or operation is not implemented.";
 }
 
 IIntSet* UnionIntSet::Union(IIntSet &other)
