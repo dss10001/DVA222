@@ -15,15 +15,15 @@ public:
 
 	virtual char* ToString() override;
 
-	virtual int* getSetArray() 
+	virtual void getSetArray(int* Dest) 
 	{
-		int* tmp = new int[size];
 		for (int i = 0; i < size; i++)
 		{
-			tmp[i] = SetOfInts[i];
+			Dest[i] = SetOfInts[i];
 		}
-		return tmp;
 	};
+
+	virtual int getSetSize() { return size; };
 
 private:
 	virtual void ExtendArray(int value) override;
