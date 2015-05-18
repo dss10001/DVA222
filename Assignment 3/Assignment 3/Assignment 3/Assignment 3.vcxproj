@@ -81,12 +81,14 @@
     <ClInclude Include="BasicIntSet.h" />
     <ClInclude Include="IIntSet.h" />
     <ClInclude Include="IntervalSet.h" />
+    <ClInclude Include="UnionIntSet.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicIntSet.cpp" />
     <ClCompile Include="IIntSet.cpp" />
     <ClCompile Include="IntervalSet.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UnionIntSet.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

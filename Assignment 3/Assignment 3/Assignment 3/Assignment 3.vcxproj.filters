@@ -24,6 +24,9 @@
     <ClInclude Include="IntervalSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UnionIntSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IIntSet.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IntervalSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnionIntSet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
