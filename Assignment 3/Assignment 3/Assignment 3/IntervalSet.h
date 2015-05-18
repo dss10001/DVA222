@@ -24,5 +24,8 @@ public:
 
 
 	virtual void cpySetArray(int* Dest);
+
+	virtual int getSetNumOfElements() override;
+
 };
 

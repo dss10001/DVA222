@@ -75,15 +75,9 @@ char* IntervalSet::ToString()
 
 void IntervalSet::cpySetArray(int* Dest)
 {
-	//Gets count of elements
-	int actualSize = 0, min, max;
-	for (int i = 0; i < count;i++)
-	{
-		min = intervalOfInts[i].intervalStart;
-		max = intervalOfInts[i].intervalEnd;
-		actualSize += max - min;
-	}
-	int index = 0/*,min,max*/;
+
+
+	int index = 0,min,max;
 	for (int i = 0; i < count; i++)
 	{
 		min = intervalOfInts[i].intervalStart;
@@ -94,4 +88,17 @@ void IntervalSet::cpySetArray(int* Dest)
 			index++;
 		}
 	}
+}
+
+int IntervalSet::getSetNumOfElements()
+{
+	//Gets count of elements
+	int actualSize = 0, min, max;
+	for (int i = 0; i < count; i++)
+	{
+		min = intervalOfInts[i].intervalStart;
+		max = intervalOfInts[i].intervalEnd;
+		actualSize += max - min;
+	}
+	return actualSize;
 }
