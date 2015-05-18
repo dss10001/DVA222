@@ -96,8 +96,6 @@ char* IntervalSet::ToString()
 
 void IntervalSet::cpySetArray(int* Dest)
 {
-
-
 	int index = 0,min,max;
 	for (int i = 0; i < count; i++)
 	{
