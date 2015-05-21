@@ -28,5 +28,7 @@ public:
 	void setSet1(int* Array, int size);
 
 	void setSet2(int* Array, int size);
+
+	virtual int getSetNumOfElements(){ return count; };
 };
 

@@ -11,7 +11,7 @@ public:
 
 	virtual void Add(int elem) override;
 
-	virtual IIntSet* Union(IIntSet &other) override; 
+	virtual IIntSet *Union(IIntSet &other) override; 
 
 	virtual char* ToString() override;
 
@@ -19,6 +19,11 @@ public:
 	{
 		memcpy(Dest, SetOfInts, sizeof(int*)*size);
 	};
+
+	virtual int getSetNumOfElements()
+	{
+		return count;
+	}
 
 private:
 	virtual void ExtendArray(int value) override;

@@ -38,7 +38,7 @@ IIntSet* UnionIntSet::Union(IIntSet &other)
 
 char* UnionIntSet::ToString()
 {
-	BasicIntSet printSet;
+	/*BasicIntSet printSet;
 	for (int i = 0; i < size_one; i++)
 	{
 		printSet.Add(arrayOfIntsOne[i]);
@@ -48,21 +48,22 @@ char* UnionIntSet::ToString()
 		printSet.Add(arrayOfIntsTwo[i]);
 	}
 
-	return printSet.ToString();
+	return printSet.ToString();*/
+	return NULL;
 }
 
 void UnionIntSet::setSet1(int* Array, int size)
 {
-	int* tmpArray = new int[size];
+	/*int* tmpArray = new int[size];
 	memcpy(tmpArray, Array, sizeof(int*)*size);
 	delete[] arrayOfIntsOne;
 	size_one = size;
-	*arrayOfIntsOne = *tmpArray;
+	*arrayOfIntsOne = *tmpArray;*/
 }
 
 void UnionIntSet::setSet2(int* Array, int size)
 {
-	arrayOfIntsTwo = new int[size];
+	/*arrayOfIntsTwo = new int[size];
 	memcpy(arrayOfIntsTwo, Array, size);
-	this->size_two = size;
+	this->size_two = size;*/
 }

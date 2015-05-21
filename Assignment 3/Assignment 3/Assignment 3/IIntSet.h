@@ -22,5 +22,5 @@ public:
 	/* Return an array of integers that contains all the individual values in this set. */
 	virtual char* ToString() = 0;
 	virtual void cpySetArray(int* Dest) = 0;
-	virtual int getSetNumOfElements() { return count; };
+	virtual int getSetNumOfElements() = 0;
 };
