@@ -3,7 +3,7 @@
 
 UnionIntSet::UnionIntSet()
 {
-	
+	this->size_one = this->size_two = 0;
 }
 
 UnionIntSet::~UnionIntSet()
