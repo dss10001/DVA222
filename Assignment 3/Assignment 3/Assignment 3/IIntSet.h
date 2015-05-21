@@ -8,9 +8,6 @@ protected:
 	virtual void ExtendArray(int value) = 0;
 public:
 
-	const int getSize() const{ return size; }
-	const int getCount() const{ return count; }
-
 	/* Returns whether this set includes the element 'elem' or not. */
 	virtual bool Contains(int elem) = 0;
 

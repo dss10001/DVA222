@@ -62,7 +62,7 @@ IIntSet* BasicIntSet::Union(IIntSet &other)
 	// create objects, bad solution.
 	UnionIntSet* _union = new UnionIntSet();
 	int* s1 = new int[getSetNumOfElements()];
-	int* s2 = new int[other.getSetNumOfElements()]; // sum(n intervals)
+	int* s2 = new int[other.getSetNumOfElements()];
 	// copy set information.
 	cpySetArray(s1);
 	other.cpySetArray(s2);

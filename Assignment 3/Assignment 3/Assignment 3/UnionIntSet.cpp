@@ -3,12 +3,16 @@
 
 UnionIntSet::UnionIntSet()
 {
-	
+	size = 0; 
+	count = 0; 
+	arrayOfIntsOne = new int[0];
+	arrayOfIntsTwo = new int[0];
 }
 
 UnionIntSet::~UnionIntSet()
 {
-
+	delete[] arrayOfIntsOne;
+	delete[] arrayOfIntsTwo;
 }
 
 void UnionIntSet::ExtendArray(int value)
@@ -48,17 +52,13 @@ char* UnionIntSet::ToString()
 
 void UnionIntSet::setSet1(int* Array, int size)
 {
-	if (!arrayOfIntsOne)
-		delete[] arrayOfIntsOne;
-
 	arrayOfIntsOne = new int[size];
-	memcpy(arrayOfIntsOne, Array, size);
+	memcpy(arrayOfIntsOne, Array, sizeof(int*)*size);
 	this->size_one = size;
 }
 
 void UnionIntSet::setSet2(int* Array, int size)
 {
-	delete[] arrayOfIntsTwo;
 	arrayOfIntsTwo = new int[size];
 	memcpy(arrayOfIntsTwo, Array, size);
 	this->size_two = size;
