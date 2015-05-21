@@ -7,6 +7,7 @@ UnionIntSet::UnionIntSet()
 	count = 0; 
 	arrayOfIntsOne = new int[0];
 	arrayOfIntsTwo = new int[0];
+	this->size_one = this->size_two = 0;
 }
 
 UnionIntSet::~UnionIntSet()
@@ -52,9 +53,11 @@ char* UnionIntSet::ToString()
 
 void UnionIntSet::setSet1(int* Array, int size)
 {
-	arrayOfIntsOne = new int[size];
-	memcpy(arrayOfIntsOne, Array, sizeof(int*)*size);
-	this->size_one = size;
+	int* tmpArray = new int[size];
+	memcpy(tmpArray, Array, sizeof(int*)*size);
+	delete[] arrayOfIntsOne;
+	size_one = size;
+	*arrayOfIntsOne = *tmpArray;
 }
 
 void UnionIntSet::setSet2(int* Array, int size)
