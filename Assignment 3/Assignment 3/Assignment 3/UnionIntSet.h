@@ -1,11 +1,13 @@
 #pragma once
 #include "IIntSet.h"
+#include "BasicIntSet.h"
 #include "Interval.h"
 #include <algorithm>    // std::copy
 
 class UnionIntSet : public IIntSet
 {
 	int *arrayOfIntsOne, *arrayOfIntsTwo;
+	int size_one, size_two;
 public:
 	UnionIntSet();
 	~UnionIntSet();
@@ -22,7 +24,8 @@ public:
 
 	virtual void cpySetArray(int* Dest){};
 
-	void setSet1(int* Array) {};
-	void setSet2(int* Array) {};
+	void setSet1(int* Array, int size);
+
+	void setSet2(int* Array, int size);
 };
 

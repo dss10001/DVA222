@@ -8,6 +8,9 @@ protected:
 	virtual void ExtendArray(int value) = 0;
 public:
 
+	const int getSize() const{ return size; }
+	const int getCount() const{ return count; }
+
 	/* Returns whether this set includes the element 'elem' or not. */
 	virtual bool Contains(int elem) = 0;
 
@@ -22,5 +25,5 @@ public:
 	/* Return an array of integers that contains all the individual values in this set. */
 	virtual char* ToString() = 0;
 	virtual void cpySetArray(int* Dest) = 0;
-	virtual int getSetNumOfElements() { return size; };
+	virtual int getSetNumOfElements() { return count; };
 };

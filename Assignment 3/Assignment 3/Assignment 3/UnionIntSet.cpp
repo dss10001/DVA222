@@ -33,5 +33,33 @@ IIntSet* UnionIntSet::Union(IIntSet &other)
 
 char* UnionIntSet::ToString()
 {
-	throw "The method or operation is not implemented.";
+	BasicIntSet printSet;
+	for (int i = 0; i < size_one; i++)
+	{
+		printSet.Add(arrayOfIntsOne[i]);
+	}
+	for (int i = 0; i < size_two; i++)
+	{
+		printSet.Add(arrayOfIntsTwo[i]);
+	}
+
+	return printSet.ToString();
+}
+
+void UnionIntSet::setSet1(int* Array, int size)
+{
+	if (!arrayOfIntsOne)
+		delete[] arrayOfIntsOne;
+
+	arrayOfIntsOne = new int[size];
+	memcpy(arrayOfIntsOne, Array, size);
+	this->size_one = size;
+}
+
+void UnionIntSet::setSet2(int* Array, int size)
+{
+	delete[] arrayOfIntsTwo;
+	arrayOfIntsTwo = new int[size];
+	memcpy(arrayOfIntsTwo, Array, size);
+	this->size_two = size;
 }

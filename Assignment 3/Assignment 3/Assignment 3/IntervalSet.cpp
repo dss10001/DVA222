@@ -117,7 +117,7 @@ int IntervalSet::getSetNumOfElements()
 	{
 		min = intervalOfInts[i].intervalStart;
 		max = intervalOfInts[i].intervalEnd;
-		actualSize += max - min;
+		actualSize += (max - min) + 1;
 	}
 	return actualSize;
 }

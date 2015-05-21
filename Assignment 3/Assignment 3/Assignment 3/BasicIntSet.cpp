@@ -40,7 +40,7 @@ void BasicIntSet::Add(int elem)
 		{
 			ExtendArray(EXTEND_VALUE);
 		}
-		SetOfInts[count];
+		SetOfInts[count] = elem;
 		count++;
 	}
 }
@@ -67,9 +67,8 @@ IIntSet* BasicIntSet::Union(IIntSet &other)
 	cpySetArray(s1);
 	other.cpySetArray(s2);
 	// set 'set' information
-	_union->setSet1(s1);
-	_union->setSet2(s2);
-
+	_union->setSet1(s1, getSetNumOfElements());
+	_union->setSet2(s2, other.getSetNumOfElements());
 	return _union;
 }
 
