@@ -23,4 +23,14 @@ public:
 	virtual char* ToString() = 0;
 	virtual void cpySetArray(int* Dest) = 0;
 	virtual int getSetNumOfElements() = 0;
+
+    IIntSet& operator=(const IIntSet &other)
+	{
+		//http://courses.cms.caltech.edu/cs11/material/cpp/donnie/cpp-ops.html
+		// 1.  Deallocate any memory that MyClass is using internally
+		// 2.  Allocate some memory to hold the contents of rhs
+		// 3.  Copy the values from rhs into this instance
+		// 4.  Return *this
+		return *this;
+	}
 };

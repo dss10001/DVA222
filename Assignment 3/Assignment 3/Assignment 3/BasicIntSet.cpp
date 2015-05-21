@@ -1,11 +1,4 @@
 #include "BasicIntSet.h"
-#include "IntervalSet.h"
-#include "UnionIntSet.h"
-#include <string>
-#include <iostream>
-#include <sstream>
-#define INITIAL_SIZE 100
-#define EXTEND_VALUE 100
 
 
 BasicIntSet::BasicIntSet()

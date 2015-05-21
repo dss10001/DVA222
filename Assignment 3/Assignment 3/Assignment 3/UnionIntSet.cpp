@@ -1,5 +1,6 @@
 #include "UnionIntSet.h"
-
+#include <stdarg.h>
+using std::copy;
 
 UnionIntSet::UnionIntSet()
 {
@@ -10,10 +11,28 @@ UnionIntSet::UnionIntSet()
 	this->size_one = this->size_two = 0;
 }
 
+UnionIntSet::UnionIntSet(const UnionIntSet &other)
+{	
+	memcpy(this->arrayOfIntsOne, other.arrayOfIntsOne, 4*other.size_one);
+	memcpy(this->arrayOfIntsTwo, other.arrayOfIntsTwo, 4*other.size_two);
+	count = other.count;
+	this->size_one = other.size_one;
+	this->size_two = other.size_two;
+
+}
+
 UnionIntSet::~UnionIntSet()
 {
-	delete[] arrayOfIntsOne;
-	delete[] arrayOfIntsTwo;
+	if (arrayOfIntsOne)
+	{
+		delete[] arrayOfIntsOne;
+	}
+	if (arrayOfIntsTwo)
+	{
+		delete[] arrayOfIntsTwo;
+	}
+	
+	
 }
 
 void UnionIntSet::ExtendArray(int value)
@@ -54,16 +73,16 @@ char* UnionIntSet::ToString()
 
 void UnionIntSet::setSet1(int* Array, int size)
 {
-	/*int* tmpArray = new int[size];
-	memcpy(tmpArray, Array, sizeof(int*)*size);
+	int* tmpArray = new int[size];
+	memcpy(tmpArray, Array, sizeof(int)*size);
 	delete[] arrayOfIntsOne;
 	size_one = size;
-	*arrayOfIntsOne = *tmpArray;*/
+	*arrayOfIntsOne = *tmpArray;
 }
 
 void UnionIntSet::setSet2(int* Array, int size)
 {
-	/*arrayOfIntsTwo = new int[size];
+	arrayOfIntsTwo = new int[size];
 	memcpy(arrayOfIntsTwo, Array, size);
-	this->size_two = size;*/
+	this->size_two = size;
 }

@@ -19,8 +19,8 @@ void main()
 	s2->Add(101);
 	s2->Add(102);
 
-	UnionIntSet *s3;
-	s3 = (UnionIntSet*)s1->Union(*s2);
+	IIntSet *s3;
+	s3 = s1->Union(*s2);
 
 	cout << s3->ToString();
 }

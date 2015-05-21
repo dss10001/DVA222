@@ -11,6 +11,7 @@ private:
 	int size_one, size_two;
 public:
 	UnionIntSet();
+	UnionIntSet(const UnionIntSet &other);
 	~UnionIntSet();
 
 	virtual void ExtendArray(int value) override;
