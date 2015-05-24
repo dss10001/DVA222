@@ -3,6 +3,9 @@
 #include "BasicIntSet.h"
 #include "Interval.h"
 #include <algorithm>    // std::copy
+#include <string>
+#include <iostream>
+#include <sstream>
 
 class UnionIntSet : public IIntSet
 {
@@ -26,9 +29,9 @@ public:
 
 	virtual void cpySetArray(int* Dest){};
 
-	void setSet1(int* Array, int size);
+	void setSet1(int* Array, int sizeArr);
 
-	void setSet2(int* Array, int size);
+	void setSet2(int* Array, int sizeArr);
 
 	virtual int getSetNumOfElements(){ return count; };
 };

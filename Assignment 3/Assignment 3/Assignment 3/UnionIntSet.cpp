@@ -23,11 +23,11 @@ UnionIntSet::UnionIntSet(const UnionIntSet &other)
 
 UnionIntSet::~UnionIntSet()
 {
-	if (arrayOfIntsOne)
+	if (!arrayOfIntsOne)
 	{
 		delete[] arrayOfIntsOne;
 	}
-	if (arrayOfIntsTwo)
+	if (!arrayOfIntsTwo)
 	{
 		delete[] arrayOfIntsTwo;
 	}
@@ -57,32 +57,44 @@ IIntSet* UnionIntSet::Union(IIntSet &other)
 
 char* UnionIntSet::ToString()
 {
-	/*BasicIntSet printSet;
+	std::ostringstream oss;
+	oss << "Int set: { ";
 	for (int i = 0; i < size_one; i++)
 	{
-		printSet.Add(arrayOfIntsOne[i]);
+		oss << arrayOfIntsOne[i] << ", ";
 	}
-	for (int i = 0; i < size_two; i++)
+	for (int i = 0; i < size_two;i++)
 	{
-		printSet.Add(arrayOfIntsTwo[i]);
+		oss << arrayOfIntsTwo[i] << ", ";
+	}
+	oss << "}";
+	return (char*)oss.str().c_str();
+}
+
+void UnionIntSet::setSet1(int* Array,int sizeArr)
+{
+	//int* tmpArray = new int[size];
+	if (!arrayOfIntsOne)
+	{
+		delete[] arrayOfIntsOne;
+	}
+	
+	memcpy(arrayOfIntsOne, Array, sizeof(int)*sizeArr);
+	
+	size_one = sizeArr;
+	size += size_one;
+	//*arrayOfIntsOne = *tmpArray;
+}
+
+void UnionIntSet::setSet2(int* Array, int sizeArr)
+{
+	if (!arrayOfIntsTwo)
+	{
+		delete[] arrayOfIntsTwo;
 	}
 
-	return printSet.ToString();*/
-	return NULL;
-}
+	memcpy(arrayOfIntsTwo, Array, sizeof(int)*sizeArr);
 
-void UnionIntSet::setSet1(int* Array, int size)
-{
-	int* tmpArray = new int[size];
-	memcpy(tmpArray, Array, sizeof(int)*size);
-	delete[] arrayOfIntsOne;
-	size_one = size;
-	*arrayOfIntsOne = *tmpArray;
-}
-
-void UnionIntSet::setSet2(int* Array, int size)
-{
-	arrayOfIntsTwo = new int[size];
-	memcpy(arrayOfIntsTwo, Array, size);
-	this->size_two = size;
+	size_two = sizeArr;
+	size += size_two;
 }
