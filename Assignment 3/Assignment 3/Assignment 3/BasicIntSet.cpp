@@ -1,7 +1,7 @@
 #include "BasicIntSet.h"
 
 
-BasicIntSet::BasicIntSet()
+BasicIntSet::BasicIntSet() : IIntSet()
 {
 	size = INITIAL_SIZE;
 	count = 0;
@@ -53,15 +53,7 @@ void BasicIntSet::ExtendArray(int value)
 IIntSet* BasicIntSet::Union(IIntSet &other)
 {
 	// create objects, bad solution.
-	UnionIntSet *_union = new UnionIntSet();
-	int* s1 = new int[getSetNumOfElements()];
-	int* s2 = new int[other.getSetNumOfElements()];
-	// copy set information.
-	cpySetArray(s1);
-	other.cpySetArray(s2);
-	// set 'set' information
-	_union->setSet1(s1, getSetNumOfElements());
-	_union->setSet2(s2, other.getSetNumOfElements());
+	UnionIntSet *_union = new UnionIntSet(this,&other);
 	
 	return _union;
 }

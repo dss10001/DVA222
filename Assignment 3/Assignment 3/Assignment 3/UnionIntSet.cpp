@@ -2,100 +2,125 @@
 #include <stdarg.h>
 using std::copy;
 
-UnionIntSet::UnionIntSet()
-{
-	size = 0; 
-	count = 0; 
-	arrayOfIntsOne = new int[0];
-	arrayOfIntsTwo = new int[0];
-	this->size_one = this->size_two = 0;
-}
 
 UnionIntSet::UnionIntSet(const UnionIntSet &other)
 {	
-	memcpy(this->arrayOfIntsOne, other.arrayOfIntsOne, 4*other.size_one);
+	/*memcpy(this->arrayOfIntsOne, other.arrayOfIntsOne, 4*other.size_one);
 	memcpy(this->arrayOfIntsTwo, other.arrayOfIntsTwo, 4*other.size_two);
 	count = other.count;
 	this->size_one = other.size_one;
 	this->size_two = other.size_two;
-
+*/
 }
+
+UnionIntSet::UnionIntSet(IIntSet *set1, IIntSet *set2) 
+{
+	*one = *set1;
+	*two = *set2;
+	size = INITIAL_SIZE;
+	count = 0;
+	SetsOfInts = new int[size];
+}
+
 
 UnionIntSet::~UnionIntSet()
 {
-	if (!arrayOfIntsOne)
-	{
-		delete[] arrayOfIntsOne;
-	}
-	if (!arrayOfIntsTwo)
-	{
-		delete[] arrayOfIntsTwo;
-	}
-	
-	
-}
-
-void UnionIntSet::ExtendArray(int value)
-{
-	throw "The method or operation is not implemented.";
+	delete[] SetsOfInts;
 }
 
 bool UnionIntSet::Contains(int elem)
 {
-	throw "The method or operation is not implemented.";
+	if (!one->Contains((elem) && !two->Contains(elem)))
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (elem == SetsOfInts[i])
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	return true;
 }
 
-void UnionIntSet::Add(int elem)
-{
-	throw "The method or operation is not implemented.";
-}
 
 IIntSet* UnionIntSet::Union(IIntSet &other)
 {
-	throw "The method or operation is not implemented.";
+	UnionIntSet *_union = new UnionIntSet(this, &other);
+
+	return _union;
 }
 
 string UnionIntSet::ToString()
 {
-	BasicIntSet *ds = new BasicIntSet();
-
-	
-	for (int i = 0; i < size_one; i++)
+	std::ostringstream oss;
+	oss <<" { ";
+	for (int i = 0; i < count; i++)
 	{
-		ds->Add(arrayOfIntsOne[i]);
+		oss << SetsOfInts[i] << ", ";
 	}
-	for (int i = 0; i < size_two;i++)
-	{
-		ds->Add(arrayOfIntsTwo[i]);
-	}
-	
-	return ds->ToString();
+	oss << "}";
+	string out = one->ToString().append(two->ToString().append(oss.str()));
+	return out;
 }
 
-void UnionIntSet::setSet1(int* Array,int sizeArr)
+
+
+void UnionIntSet::ExtendArray(int value)
 {
-	//int* tmpArray = new int[size];
-	if (!arrayOfIntsOne)
-	{
-		delete[] arrayOfIntsOne;
-	}
-	
-	memcpy(arrayOfIntsOne, Array, sizeof(int)*sizeArr);
-	
-	size_one = sizeArr;
-	size += size_one;
-	//*arrayOfIntsOne = *tmpArray;
+	int* tmpArray = new int[size + value];
+
+	_memccpy(tmpArray, SetsOfInts, count, size);
+
+	delete[] SetsOfInts;
+	size = size + value;
+
+	*SetsOfInts = *tmpArray;
 }
 
-void UnionIntSet::setSet2(int* Array, int sizeArr)
+void UnionIntSet::Add(int elem)
 {
-	if (!arrayOfIntsTwo)
+	if (!Contains(elem))
 	{
-		delete[] arrayOfIntsTwo;
+		if (count >= size)
+		{
+			ExtendArray(EXTEND_VALUE);
+		}
+		SetsOfInts[count] = elem;
+		count++;
 	}
-
-	memcpy(arrayOfIntsTwo, Array, sizeof(int)*sizeArr);
-
-	size_two = sizeArr;
-	size += size_two;
 }
+
+int UnionIntSet::getSetNumOfElements()
+{
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+//void UnionIntSet::setSet1(int* Array,int sizeArr)
+//{
+//	//int* tmpArray = new int[size];
+//	if (!arrayOfIntsOne)
+//	{
+//		delete[] arrayOfIntsOne;
+//	}
+//	
+//	memcpy(arrayOfIntsOne, Array, sizeof(int)*sizeArr);
+//	
+//	size_one = sizeArr;
+//	size += size_one;
+//	//*arrayOfIntsOne = *tmpArray;
+//}
+
+//void UnionIntSet::setSet2(int* Array, int sizeArr)
+//{
+//	if (!arrayOfIntsTwo)
+//	{
+//		delete[] arrayOfIntsTwo;
+//	}
+//
+//	memcpy(arrayOfIntsTwo, Array, sizeof(int)*sizeArr);
+//
+//	size_two = sizeArr;
+//	size += size_two;
+//}

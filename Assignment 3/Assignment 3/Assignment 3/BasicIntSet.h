@@ -33,7 +33,7 @@ public:
 		return count;
 	}
 
-private:
+	protected:
 	virtual void ExtendArray(int value) override;
 	int* SetOfInts;
 };

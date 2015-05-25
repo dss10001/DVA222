@@ -10,7 +10,6 @@ protected:
 	/* Function to extend a array by the size of 'value'. */
 	virtual void ExtendArray(int value) = 0;
 public:
-
 	/* Returns whether this set includes the element 'elem' or not. */
 	virtual bool Contains(int elem) = 0;
 
@@ -24,7 +23,7 @@ public:
 
 	/* Return an array of integers that contains all the individual values in this set. */
 	virtual string ToString() = 0;
-	virtual void cpySetArray(int* Dest) = 0;
+	
 	virtual int getSetNumOfElements() = 0;
 
     IIntSet& operator=(const IIntSet &other)

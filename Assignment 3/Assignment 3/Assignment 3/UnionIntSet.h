@@ -10,29 +10,25 @@
 class UnionIntSet : public IIntSet
 {
 private:
-	int *arrayOfIntsOne, *arrayOfIntsTwo;
-	int size_one, size_two;
+	IIntSet *one, *two;
+	int *SetsOfInts;
 public:
-	UnionIntSet();
+	UnionIntSet(IIntSet *set1,IIntSet *set2);
 	UnionIntSet(const UnionIntSet &other);
 	~UnionIntSet();
 
-	virtual void ExtendArray(int value) override;
-
 	virtual bool Contains(int elem) override;
-
-	virtual void Add(int elem) override;
 
 	virtual IIntSet* Union(IIntSet &other) override;
 
 	virtual string ToString() override;
 
-	virtual void cpySetArray(int* Dest){};
+	virtual void ExtendArray(int value) override;
 
-	void setSet1(int* Array, int sizeArr);
+	virtual void Add(int elem) override;
 
-	void setSet2(int* Array, int sizeArr);
+	virtual int getSetNumOfElements() override;
 
-	virtual int getSetNumOfElements(){ return count; };
+	/*virtual int getSetNumOfElements(){ return count; };*/
 };
 
