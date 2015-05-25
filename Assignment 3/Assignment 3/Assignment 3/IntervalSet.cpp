@@ -89,7 +89,7 @@ IIntSet* IntervalSet::Union(IIntSet &other)
 
 }
 
-char* IntervalSet::ToString()
+string IntervalSet::ToString()
 {
 	return NULL;
 }

@@ -66,7 +66,7 @@ IIntSet* BasicIntSet::Union(IIntSet &other)
 	return _union;
 }
 
-char* BasicIntSet::ToString()
+string BasicIntSet::ToString()
 {
 	std::ostringstream oss;
 	oss << "Int set: { ";
@@ -75,6 +75,6 @@ char* BasicIntSet::ToString()
 		oss << SetOfInts[i] << ", ";
 	}
 	oss << "}";
-	return (char*)oss.str().c_str();
+	return oss.str();
 }
 

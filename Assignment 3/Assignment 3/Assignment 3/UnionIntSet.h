@@ -25,7 +25,7 @@ public:
 
 	virtual IIntSet* Union(IIntSet &other) override;
 
-	virtual char* ToString() override;
+	virtual string ToString() override;
 
 	virtual void cpySetArray(int* Dest){};
 

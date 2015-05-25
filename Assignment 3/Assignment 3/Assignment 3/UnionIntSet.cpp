@@ -55,20 +55,21 @@ IIntSet* UnionIntSet::Union(IIntSet &other)
 	throw "The method or operation is not implemented.";
 }
 
-char* UnionIntSet::ToString()
+string UnionIntSet::ToString()
 {
-	std::ostringstream oss;
-	oss << "Int set: { ";
+	BasicIntSet *ds = new BasicIntSet();
+
+	
 	for (int i = 0; i < size_one; i++)
 	{
-		oss << arrayOfIntsOne[i] << ", ";
+		ds->Add(arrayOfIntsOne[i]);
 	}
 	for (int i = 0; i < size_two;i++)
 	{
-		oss << arrayOfIntsTwo[i] << ", ";
+		ds->Add(arrayOfIntsTwo[i]);
 	}
-	oss << "}";
-	return (char*)oss.str().c_str();
+	
+	return ds->ToString();
 }
 
 void UnionIntSet::setSet1(int* Array,int sizeArr)

@@ -6,7 +6,7 @@
 #include <iostream>
 #include <sstream>
 
-#define INITIAL_SIZE 100
+#define INITIAL_SIZE 20
 #define EXTEND_VALUE 100
 
 class BasicIntSet : public IIntSet
@@ -21,7 +21,7 @@ public:
 
 	virtual IIntSet *Union(IIntSet &other) override; 
 
-	virtual char* ToString() override;
+	virtual string ToString() override;
 
 	virtual void cpySetArray(int* Dest)
 	{

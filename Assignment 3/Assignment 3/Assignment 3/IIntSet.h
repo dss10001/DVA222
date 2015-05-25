@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+
+using std::string;
 class IIntSet
 {
 protected:
@@ -20,7 +23,7 @@ public:
 	virtual IIntSet* Union(IIntSet &other) = 0;
 
 	/* Return an array of integers that contains all the individual values in this set. */
-	virtual char* ToString() = 0;
+	virtual string ToString() = 0;
 	virtual void cpySetArray(int* Dest) = 0;
 	virtual int getSetNumOfElements() = 0;
 
