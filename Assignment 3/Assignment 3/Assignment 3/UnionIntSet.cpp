@@ -1,40 +1,29 @@
 #include "UnionIntSet.h"
-#include <stdarg.h>
-using std::copy;
 
-
-UnionIntSet::UnionIntSet(const UnionIntSet &other)
-{	
-	/*memcpy(this->arrayOfIntsOne, other.arrayOfIntsOne, 4*other.size_one);
-	memcpy(this->arrayOfIntsTwo, other.arrayOfIntsTwo, 4*other.size_two);
-	count = other.count;
-	this->size_one = other.size_one;
-	this->size_two = other.size_two;
-*/
-}
 
 UnionIntSet::UnionIntSet(IIntSet *set1, IIntSet *set2) 
 {
-	*one = *set1;
-	*two = *set2;
 	size = INITIAL_SIZE;
 	count = 0;
-	SetsOfInts = new int[size];
-}
 
+	IntSetA = set1;
+	IntSetB = set2;
+	ExtendedUnionSet = new int[size];
+}
 
 UnionIntSet::~UnionIntSet()
 {
-	delete[] SetsOfInts;
+	delete[] ExtendedUnionSet;
 }
+
 
 bool UnionIntSet::Contains(int elem)
 {
-	if (!one->Contains((elem) && !two->Contains(elem)))
+	if (!IntSetA->Contains((elem) && !IntSetB->Contains(elem)))
 	{
 		for (int i = 0; i < size; i++)
 		{
-			if (elem == SetsOfInts[i])
+			if (elem == ExtendedUnionSet[i])
 			{
 				return true;
 			}
@@ -42,41 +31,6 @@ bool UnionIntSet::Contains(int elem)
 		return false;
 	}
 	return true;
-}
-
-
-IIntSet* UnionIntSet::Union(IIntSet &other)
-{
-	UnionIntSet *_union = new UnionIntSet(this, &other);
-
-	return _union;
-}
-
-string UnionIntSet::ToString()
-{
-	std::ostringstream oss;
-	oss <<" { ";
-	for (int i = 0; i < count; i++)
-	{
-		oss << SetsOfInts[i] << ", ";
-	}
-	oss << "}";
-	string out = one->ToString().append(two->ToString().append(oss.str()));
-	return out;
-}
-
-
-
-void UnionIntSet::ExtendArray(int value)
-{
-	int* tmpArray = new int[size + value];
-
-	_memccpy(tmpArray, SetsOfInts, count, size);
-
-	delete[] SetsOfInts;
-	size = size + value;
-
-	*SetsOfInts = *tmpArray;
 }
 
 void UnionIntSet::Add(int elem)
@@ -87,40 +41,40 @@ void UnionIntSet::Add(int elem)
 		{
 			ExtendArray(EXTEND_VALUE);
 		}
-		SetsOfInts[count] = elem;
+		ExtendedUnionSet[count] = elem;
 		count++;
 	}
 }
 
-int UnionIntSet::getSetNumOfElements()
+IIntSet* UnionIntSet::Union(IIntSet &other)
 {
-	throw std::logic_error("The method or operation is not implemented.");
+	UnionIntSet *_union = new UnionIntSet(this, &other);
+	return _union;
 }
 
-//void UnionIntSet::setSet1(int* Array,int sizeArr)
-//{
-//	//int* tmpArray = new int[size];
-//	if (!arrayOfIntsOne)
-//	{
-//		delete[] arrayOfIntsOne;
-//	}
-//	
-//	memcpy(arrayOfIntsOne, Array, sizeof(int)*sizeArr);
-//	
-//	size_one = sizeArr;
-//	size += size_one;
-//	//*arrayOfIntsOne = *tmpArray;
-//}
+string UnionIntSet::ToString()
+{
+	std::ostringstream oss;
+	oss << "Extended Union Int-set { ";
+	for (int i = 0; i < count; i++)
+	{
+		oss << ExtendedUnionSet[i] << ", ";
+	}
+	oss << "}\n";
 
-//void UnionIntSet::setSet2(int* Array, int sizeArr)
-//{
-//	if (!arrayOfIntsTwo)
-//	{
-//		delete[] arrayOfIntsTwo;
-//	}
-//
-//	memcpy(arrayOfIntsTwo, Array, sizeof(int)*sizeArr);
-//
-//	size_two = sizeArr;
-//	size += size_two;
-//}
+	string out = IntSetA->ToString().append(IntSetB->ToString().append(oss.str()));
+	return "Union { \n" + out + "}\n";
+}
+
+void UnionIntSet::ExtendArray(int value)
+{
+	int* tmpArray = new int[size + value];
+
+	_memccpy(tmpArray, ExtendedUnionSet, count, size);
+
+	delete[] ExtendedUnionSet;
+	size = size + value;
+
+	*ExtendedUnionSet = *tmpArray;
+}
+

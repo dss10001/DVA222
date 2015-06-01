@@ -6,20 +6,23 @@ IntervalSet::IntervalSet()
 	size = 0;
 	count = 0;
 	intervalOfInts = new Interval[size];
-
 }
-
 
 IntervalSet::~IntervalSet()
 {
 	delete[]intervalOfInts;
 }
 
+
 bool IntervalSet::Contains(int elem)
 {
-	for (int i = 0; i < size;i++)
+	for (int i = 0; i < size; i++)
+	{
 		if (elem >= intervalOfInts[i].intervalStart && elem <= intervalOfInts[i].intervalEnd)
+		{
 			return true;
+		}
+	}
 	return false;
 }
 
@@ -30,7 +33,7 @@ void IntervalSet::Add(int elem)
 		int actionCount = 0;	// count number of overwritten intervals by 'elem'
 		int index1, index2;		// indeces of overwritten interval elements. 
 
-		if (size == count)
+		if (size >= count)
 		{
 			ExtendArray(10);
 		}
@@ -39,14 +42,14 @@ void IntervalSet::Add(int elem)
 		{
 			if (elem == intervalOfInts[i].intervalStart - 1)
 			{
-				// set intervalstart to elem
+				// set intervalstart = elem
 				intervalOfInts[i].intervalStart = elem;
 				actionCount++;
 				index2 = i;
 			}
 			else if (elem == intervalOfInts[i].intervalEnd + 1)
 			{
-				// set intervalend to elem
+				// set intervalend = elem
 				intervalOfInts[i].intervalEnd = elem;
 				actionCount++;
 				index1 = i;
@@ -75,49 +78,35 @@ void IntervalSet::Add(int elem)
 	}
 }
 
-void IntervalSet::ExtendArray(int value)
-{
-	Interval *newInterval = new Interval[size + value];
-	memcpy(newInterval, intervalOfInts, sizeof(Interval));
-	delete []intervalOfInts;
-	intervalOfInts = newInterval;
-}
-
 IIntSet* IntervalSet::Union(IIntSet &other)
 {
-	return NULL;
-
+	UnionIntSet* _union = new UnionIntSet(this, &other);
+	return _union;
 }
 
 string IntervalSet::ToString()
 {
-	return NULL;
-}
-
-void IntervalSet::cpySetArray(int* Dest)
-{
-	int index = 0,min,max;
+	std::ostringstream oss;
+	oss << "Interval Int-set: {";
+	int min_value, max_value;
 	for (int i = 0; i < count; i++)
 	{
-		min = intervalOfInts[i].intervalStart;
-		max = intervalOfInts[i].intervalEnd;
-		for (int r = min; r <= max;r++)
+		min_value = intervalOfInts[i].intervalStart;
+		max_value = intervalOfInts[i].intervalEnd;
+
+		for (int x = min_value; x <= max_value; x++)
 		{
-			Dest[index] = r;
-			index++;
+			oss << x << ", ";
 		}
 	}
+	oss << "}\n";
+	return oss.str();
 }
 
-int IntervalSet::getSetNumOfElements()
+void IntervalSet::ExtendArray(int value)
 {
-	//Gets count of elements
-	int actualSize = 0, min, max;
-	for (int i = 0; i < count; i++)
-	{
-		min = intervalOfInts[i].intervalStart;
-		max = intervalOfInts[i].intervalEnd;
-		actualSize += (max - min) + 1;
-	}
-	return actualSize;
+	Interval *newInterval = new Interval[size + value];
+	memcpy(newInterval, intervalOfInts, sizeof(Interval));
+	delete[]intervalOfInts;
+	intervalOfInts = newInterval;
 }

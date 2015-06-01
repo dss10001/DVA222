@@ -23,4 +23,6 @@ void main()
 	s3 = s1->Union(*s2);
 
 	cout << s3->ToString();
+	
+	system("PAUSE");
 }

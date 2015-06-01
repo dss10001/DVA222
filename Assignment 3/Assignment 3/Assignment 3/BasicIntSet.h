@@ -1,16 +1,18 @@
 #pragma once
 #include "IIntSet.h"
-#include "IntervalSet.h"
 #include "UnionIntSet.h"
-#include <string>
 #include <iostream>
 #include <sstream>
 
 #define INITIAL_SIZE 20
-#define EXTEND_VALUE 100
+#define EXTEND_VALUE 50
 
 class BasicIntSet : public IIntSet
 {
+private:
+	int* SetOfInts;
+	virtual void ExtendArray(int value) override;
+
 public:
 	BasicIntSet();
 	~BasicIntSet();
@@ -22,19 +24,5 @@ public:
 	virtual IIntSet *Union(IIntSet &other) override; 
 
 	virtual string ToString() override;
-
-	virtual void cpySetArray(int* Dest)
-	{
-		memcpy(Dest, SetOfInts, sizeof(int*)*size);
-	};
-
-	virtual int getSetNumOfElements()
-	{
-		return count;
-	}
-
-	protected:
-	virtual void ExtendArray(int value) override;
-	int* SetOfInts;
 };
 

@@ -1,16 +1,17 @@
 #pragma once
-#include <stdio.h>
-#include <iostream>
 #include "IIntSet.h"
 #include "Interval.h"
+#include "UnionIntSet.h"
+#include <stdio.h>
+#include <iostream>
+
 class IntervalSet : public IIntSet
 {
 private:
-	Interval *intervalOfInts;
-	int count;
+	Interval*  intervalOfInts;
 	virtual void ExtendArray(int value);
-public:
-	
+
+public:	
 	IntervalSet();
 	~IntervalSet();
 
@@ -21,11 +22,5 @@ public:
 	virtual IIntSet* Union(IIntSet &other) override;
 
 	virtual string ToString() override;
-
-
-	virtual void cpySetArray(int* Dest);
-
-	virtual int getSetNumOfElements() override;
-
 };
 
